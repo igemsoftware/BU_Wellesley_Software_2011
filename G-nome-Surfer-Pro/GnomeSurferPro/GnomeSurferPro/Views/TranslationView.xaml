@@ -1,0 +1,43 @@
+﻿<s:SurfaceUserControl x:Class="GnomeSurferPro.Views.TranslationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    Background="{Binding Background}" Width="300" Height="Auto">
+    <Border BorderBrush="White" BorderThickness="20" Width="300">
+        <Grid Background="Transparent" Width="300" Height="Auto">
+            <Grid Background="White" Height="39" Width="300" VerticalAlignment="Top">
+                <Label Foreground="Black" HorizontalAlignment="Left" Width="91" Margin="24,0,0,0">TRANSLATION</Label>
+                <Label Margin="111,0,122,0" Foreground="Black" Content="{Binding FirstBasePair}" />
+                <Label HorizontalAlignment="Right" Width="92" Foreground="Black" Margin="0,2,19,-2" Content="{Binding LastBasePair}"/>
+                <Label Margin="0,2,84,0" Foreground="Black" Content="~" HorizontalAlignment="Right" Width="42" />
+            </Grid>
+            <s:SurfaceScrollViewer Width="250" Margin="25, 60, 25, 35" CanContentScroll="True" Name="TranslationScrollViewer"
+                               HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden"
+                               >
+                <TextBlock Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                       Margin="0,0,0,0" Text="{Binding Translation}" FontFamily="Courier New"  TextWrapping="Wrap" Foreground="Azure"/>
+            </s:SurfaceScrollViewer>
+            <Grid Background="White" Width="300" Height="29" VerticalAlignment="Bottom">
+                <Label Content="{Binding Name}" Margin="0,0,29,-2" Name="label1" Foreground="Black" FontSize="10" Height="28.96" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="81"></Label>
+                <Label Content="{Binding LocusTag}" Margin="84,0,116,-3" Name="label2" Foreground="Black" FontSize="10" Height="28.96" VerticalAlignment="Bottom"></Label>
+                <Label Margin="2,0,0,-2" Name="label3" Foreground="Black" HorizontalAlignment="Left" Width="92" FontSize="10" Height="27.96" VerticalAlignment="Bottom">Gene Tag/Name:</Label>
+            </Grid>
+        </Grid>
+    </Border>
+    <!--<Grid Background="White" Width="300" Height="Auto">
+        <Label Foreground="Black" HorizontalAlignment="Left" Width="93" Margin="24,12,0,49">TRANSLATION</Label>
+        <Label Margin="107,12,140,47.96" Foreground="Black" Content="{Binding FirstBasePair}"/>
+        <Label HorizontalAlignment="Right" Width="92" Foreground="Black" Margin="0,12,33,47.96" Content="{Binding LastBasePair}"/>
+        <Label Margin="0,12,112,47.96" Foreground="Black" Content="~" HorizontalAlignment="Right" Width="31" />
+        <s:SurfaceScrollViewer Width="250" Margin="25, 50, 25, 25" CanContentScroll="True" Background="Black"
+                                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" >
+            <Label Width="250">
+                <TextBlock Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Courier New" 
+                           Margin="0,0,0,0" Text="{Binding Translation}" TextWrapping="Wrap" Foreground="White"/>
+            </Label>
+        </s:SurfaceScrollViewer>
+        <Label Content="{Binding Name}" Margin="0,0,25,-3" Name="label1" Foreground="Black" FontSize="10" Height="28.96" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74"></Label>
+        <Label Content="{Binding LocusTag}" Margin="84,0,112,-4" Name="label2" Foreground="Black" FontSize="10" Height="28.96" VerticalAlignment="Bottom"></Label>
+        <Label Margin="2,0,0,-3" Name="label3" Foreground="Black" HorizontalAlignment="Left" Width="92" FontSize="10" Height="27.96" VerticalAlignment="Bottom">Gene Tag/Name:</Label>
+    </Grid>-->
+</s:SurfaceUserControl>

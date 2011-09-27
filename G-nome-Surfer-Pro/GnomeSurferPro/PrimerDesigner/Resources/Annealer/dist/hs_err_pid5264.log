@@ -1,0 +1,311 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d8ea683, pid=5264, tid=4536
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xfa683]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01411c00):  JavaThread "main" [_thread_in_vm, id=4536, stack(0x001d0000,0x00220000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x00217e40
+
+Registers:
+EAX=0x00003000, EBX=0x01427e20, ECX=0x00217e40, EDX=0x001d6050
+ESP=0x0021ae4c, EBP=0x0021aea8, ESI=0x00000003, EDI=0x0021ae40
+EIP=0x6d8ea683, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0021ae4c)
+0x0021ae4c:   01427e24 01411c00 6d8eae03 01427e24
+0x0021ae5c:   01411c00 01427e20 000000d1 00000000
+0x0021ae6c:   01400048 015868c8 01400150 0149b8f0
+0x0021ae7c:   0021aee8 02352f87 0021ae98 6d826dd6
+0x0021ae8c:   02352f87 0021aee8 0021aeb8 6d9562f4
+0x0021ae9c:   0021b0c4 0000000a 01427e20 0021aeec
+0x0021aeac:   6d97c531 0021b0bc 0121af14 0021b024
+0x0021aebc:   02359290 01427e24 01411c00 01427e20 
+
+Instructions: (pc=0x6d8ea683)
+0x6d8ea663:   d9 18 04 00 8b f8 a1 20 5f a5 6d be 01 00 00 00
+0x6d8ea673:   3b c6 7c 1c e8 d4 2d 04 00 0f af c6 8b cf 2b c8
+0x6d8ea683:   c7 01 00 00 00 00 a1 20 5f a5 6d 46 3b f0 7e e4
+0x6d8ea693:   5f 5e c3 cc cc cc cc cc cc cc cc cc cc 55 8b ec 
+
+
+Register to memory mapping:
+
+EAX=0x00003000 is an unknown value
+EBX=0x01427e20 is an unknown value
+ECX=0x00217e40 is pointing into the stack for thread: 0x01411c00
+EDX=0x001d6050 is pointing into the stack for thread: 0x01411c00
+ESP=0x0021ae4c is pointing into the stack for thread: 0x01411c00
+EBP=0x0021aea8 is pointing into the stack for thread: 0x01411c00
+ESI=0x00000003 is an unknown value
+EDI=0x0021ae40 is pointing into the stack for thread: 0x01411c00
+
+
+Stack: [0x001d0000,0x00220000],  sp=0x0021ae4c,  free space=299k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xfa683]
+V  [jvm.dll+0x18c531]
+V  [jvm.dll+0xfaecd]
+V  [jvm.dll+0xbb734]
+C  [java.dll+0x1061]
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  sun.misc.Launcher$ExtClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+7
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+23
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfae4b]
+V  [jvm.dll+0x18c531]
+V  [jvm.dll+0xfaff1]
+V  [jvm.dll+0xfb0b5]
+V  [jvm.dll+0x26ec0]
+V  [jvm.dll+0x27506]
+V  [jvm.dll+0x278b5]
+V  [jvm.dll+0x25151]
+V  [jvm.dll+0xffa0]
+V  [jvm.dll+0x158a2]
+V  [jvm.dll+0x25c4d]
+V  [jvm.dll+0xbad69]
+V  [jvm.dll+0xbaf9a]
+C  [java.dll+0x15dd]
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfae4b]
+V  [jvm.dll+0x18c531]
+V  [jvm.dll+0xfaecd]
+V  [jvm.dll+0xbb734]
+C  [java.dll+0x1061]
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfae4b]
+V  [jvm.dll+0x18c531]
+V  [jvm.dll+0xfaff1]
+V  [jvm.dll+0xfb0b5]
+V  [jvm.dll+0x26ec0]
+V  [jvm.dll+0x27506]
+V  [jvm.dll+0x278b5]
+V  [jvm.dll+0x25151]
+V  [jvm.dll+0xffa0]
+V  [jvm.dll+0x158a2]
+V  [jvm.dll+0x25c4d]
+V  [jvm.dll+0xbad69]
+V  [jvm.dll+0xbaf9a]
+C  [java.dll+0x15dd]
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfae4b]
+V  [jvm.dll+0x18c531]
+V  [jvm.dll+0xfaecd]
+V  [jvm.dll+0xbb734]
+C  [java.dll+0x1061]
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfae4b]
+V  [jvm.dll+0x18c531]
+V  [jvm.dll+0xfaff1]
+V  [jvm.dll+0xfb0b5]
+V  [jvm.dll+0x26ec0]
+V  [jvm.dll+0x27506]
+V  [jvm.dll+0x278b5]
+V  [jvm.dll+0x25151]
+V  [jvm.dll+0xffa0]
+V  [jvm.dll+0x158a2]
+V  [jvm.dll+0x25c4d]
+V  [jvm.dll+0xbad69]
+V  [jvm.dll+0xbaf9a]
+C  [java.dll+0x15dd]
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfae4b]
+V  [jvm.dll+0x18c531]
+...<more frames>...
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  sun.misc.Launcher$ExtClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+7
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+23
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  annealer.Annealer.align(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;+4
+j  annealer.Main.main([Ljava/lang/String;)V+6
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x01486400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5988, stack(0x04440000,0x04490000)]
+  0x01477800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=2732, stack(0x043f0000,0x04440000)]
+  0x01476800 JavaThread "Attach Listener" daemon [_thread_blocked, id=5756, stack(0x043a0000,0x043f0000)]
+  0x01475800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5776, stack(0x04350000,0x043a0000)]
+  0x01470000 JavaThread "Finalizer" daemon [_thread_blocked, id=4336, stack(0x01690000,0x016e0000)]
+  0x0146b800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3076, stack(0x01640000,0x01690000)]
+=>0x01411c00 JavaThread "main" [_thread_in_vm, id=4536, stack(0x001d0000,0x00220000)]
+
+Other Threads:
+  0x0142fc00 VMThread [stack: 0x01500000,0x01550000] [id=3480]
+  0x01488000 WatcherThread [stack: 0x04490000,0x044e0000] [id=4172]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 468K [0x24080000, 0x245d0000, 0x295d0000)
+  eden space 4416K,  10% used [0x24080000, 0x240f5060, 0x244d0000)
+  from space 512K,   0% used [0x244d0000, 0x244d0000, 0x24550000)
+  to   space 512K,   0% used [0x24550000, 0x24550000, 0x245d0000)
+ tenured generation   total 10944K, used 0K [0x295d0000, 0x2a080000, 0x34080000)
+   the space 10944K,   0% used [0x295d0000, 0x295d0000, 0x295d0200, 0x2a080000)
+ compacting perm gen  total 12288K, used 64K [0x34080000, 0x34c80000, 0x38080000)
+   the space 12288K,   0% used [0x34080000, 0x340902c8, 0x34090400, 0x34c80000)
+    ro space 10240K,  51% used [0x38080000, 0x385adff8, 0x385ae000, 0x38a80000)
+    rw space 12288K,  55% used [0x38a80000, 0x3911c208, 0x3911c400, 0x39680000)
+
+Code Cache  [0x02350000, 0x023c0000, 0x04350000)
+ total_blobs=133 nmethods=9 adapters=61 free_code_cache=33100160 largest_free_block=0
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Windows\system32\java.exe
+0x77580000 - 0x776a8000 	C:\Windows\system32\ntdll.dll
+0x76060000 - 0x7613c000 	C:\Windows\system32\kernel32.dll
+0x75f50000 - 0x76016000 	C:\Windows\system32\ADVAPI32.dll
+0x76360000 - 0x76423000 	C:\Windows\system32\RPCRT4.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76430000 - 0x764cd000 	C:\Windows\system32\USER32.dll
+0x75e10000 - 0x75e5b000 	C:\Windows\system32\GDI32.dll
+0x72af0000 - 0x72b22000 	C:\Windows\system32\WINMM.dll
+0x764d0000 - 0x7657a000 	C:\Windows\system32\msvcrt.dll
+0x76140000 - 0x76285000 	C:\Windows\system32\ole32.dll
+0x770f0000 - 0x7717d000 	C:\Windows\system32\OLEAUT32.dll
+0x73f90000 - 0x73fcd000 	C:\Windows\system32\OLEACC.dll
+0x75df0000 - 0x75e0e000 	C:\Windows\system32\IMM32.DLL
+0x76290000 - 0x76358000 	C:\Windows\system32\MSCTF.dll
+0x75a50000 - 0x75a7c000 	C:\Windows\system32\apphelp.dll
+0x75ca0000 - 0x75ca9000 	C:\Windows\system32\LPK.DLL
+0x77180000 - 0x771fd000 	C:\Windows\system32\USP10.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x75c10000 - 0x75c17000 	C:\Windows\system32\PSAPI.DLL
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+
+VM Arguments:
+java_command: Annealer.jar GTGCCCCACCGCTGCGC GGCGCAAGTCGTCGCCGG
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files\TortoiseSVN\bin;C:\Program Files\SlikSvn\bin\;C:\Windows\System32\WindowsPowerShell\v1.0\
+USERNAME=public Surface
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Vista Build 6002 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2095568k(393196k free), swap 5172948k(760664k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.1-b02) for windows-x86 JRE (1.6.0_26-b03), built on May  4 2011 00:50:59 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Mon Aug 01 07:44:44 2011
+elapsed time: 5 seconds
+

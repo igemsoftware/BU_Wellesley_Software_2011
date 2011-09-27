@@ -1,0 +1,317 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71AB803B-CD92-4EA9-AA2F-392AA478BE22}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>GnomeSurferPro</RootNamespace>
+    <AssemblyName>GnomeSurferPro</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>winexe</OutputType>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>Publish\</PublishUrl>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Surface" />
+    <Reference Include="Microsoft.Surface.Presentation" />
+    <Reference Include="Microsoft.Surface.Presentation.Generic" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\ThreadedPubMedService.cs" />
+    <Compile Include="Util\ChromosomeWheelImageGenerator.cs" />
+    <Compile Include="Util\ContactsHelper.cs" />
+    <Compile Include="Selectors\ExtendedDesktopStyleSelector.cs" />
+    <Compile Include="Selectors\ExtendedDesktopTemplateSelector.cs" />
+    <Compile Include="Models\IPublication.cs" />
+    <Compile Include="Models\IPubMedService.cs" />
+    <Compile Include="Models\Publication.cs" />
+    <Compile Include="Util\RelayCommand.cs" />
+    <Compile Include="ViewModels\GeneSearchBoxViewModel.cs" />
+    <Compile Include="ViewModels\PrimerDesignerViewModel.cs" />
+    <Compile Include="ViewModels\PublicationsArticleViewModel.cs" />
+    <Compile Include="ViewModels\SearchMenuViewModel.cs" />
+    <Compile Include="ViewModels\SearchShelfViewModel.cs" />
+    <Compile Include="ViewModels\SequenceViewModel.cs" />
+    <Compile Include="ViewModels\TranslationViewModel.cs" />
+    <Compile Include="Views\Block.xaml.cs">
+      <DependentUpon>Block.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeneSearchView.xaml.cs">
+      <DependentUpon>GeneSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadingAnimation.xaml.cs">
+      <DependentUpon>LoadingAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PublicationsArticle.xaml.cs">
+      <DependentUpon>PublicationsArticle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchMenu.xaml.cs">
+      <DependentUpon>SearchMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SequenceView.xaml.cs">
+      <DependentUpon>SequenceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\TestSVIViewModel.cs" />
+    <Compile Include="ViewModels\ExtendedDesktopViewModel.cs" />
+    <Compile Include="Views\ExtendedDesktop.xaml.cs">
+      <DependentUpon>ExtendedDesktop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PublicationsListBox.xaml.cs">
+      <DependentUpon>PublicationsListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PublicationsResourceDictionary.xaml.cs">
+      <DependentUpon>PublicationsResourceDictionary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\PublicationsViewModel.cs" />
+    <Compile Include="Models\PubMedParser.cs" />
+    <Compile Include="Models\PubMedService.cs" />
+    <Compile Include="Selectors\SurfaceWindow1DataTemplateSelector.cs" />
+    <Compile Include="Selectors\SurfaceWindow1ItemContainerStyleSelector.cs" />
+    <Compile Include="Views\TempPublicationSVI.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\ChromosomeBar.xaml.cs">
+      <DependentUpon>ChromosomeBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ChromosomeBarViewModel.cs" />
+    <Compile Include="Selectors\GenePentagonStyleSelector.cs" />
+    <Compile Include="ViewModels\IVisualPart.cs" />
+    <Compile Include="Util\LinqToVisualTree.cs" />
+    <Compile Include="Views\LoopCanvasHorizontal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\NC_008596.gb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ScrollViewBinding.cs" />
+    <Compile Include="Util\ScrollViewerBinding.cs" />
+    <Compile Include="Views\SurfaceWindow1.xaml.cs">
+      <DependentUpon>SurfaceWindow1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SurfaceWindow1ViewModel.cs" />
+    <Compile Include="ViewModels\VisualGene.cs" />
+    <Compile Include="Views\TestSVI.xaml.cs">
+      <DependentUpon>TestSVI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TranslationView.xaml.cs">
+      <DependentUpon>TranslationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\VisualPartSelector.cs" />
+    <Compile Include="ViewModels\VisualTickMark.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Genomes\NC_002755_Chromosome.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Genomes\NC_002755_Features.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Genomes\NC_007414_Chromosome.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Genomes\NC_007414_Features.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Genomes\NC_009565_Chromosome.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Genomes\NC_009565_Features.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\iconPreview.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\MC2_155.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_000913.2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_000913.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_000962.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_002655.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_002755.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_007414.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_008596.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_009525.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_009565.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_010473.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\wheel_images\NC_012943.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="GnomeSurferPro.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WindowBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Block.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GeneSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoadingAnimation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PublicationsArticle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SequenceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ExtendedDesktop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PublicationsListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PublicationsResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ChromosomeBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SurfaceWindow1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TestSVI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TranslationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenBank\GenBank.csproj">
+      <Project>{B72B2095-E516-409F-A64E-6A5C825F39B8}</Project>
+      <Name>GenBank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrimerDesigner\PrimerDesigner.csproj">
+      <Project>{57CF05A4-B08E-4985-99FC-FA955544AE2C}</Project>
+      <Name>PrimerDesigner</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

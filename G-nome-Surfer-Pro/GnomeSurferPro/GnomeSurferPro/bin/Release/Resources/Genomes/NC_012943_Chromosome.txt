@@ -1,0 +1,5 @@
+LENGTH=4398250 bp
+ACCESSION=NC_012943
+VERSION=GI:253796915
+ORGANISM=Mycobacterium tuberculosis KZN 1435
+LINEAGE=Bacteria; Actinobacteria; Actinobacteridae; Actinomycetales; Corynebacterineae; Mycobacteriaceae; Mycobacterium; Mycobacterium tuberculosis complex.

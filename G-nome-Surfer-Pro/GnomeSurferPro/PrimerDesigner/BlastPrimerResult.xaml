@@ -1,0 +1,12 @@
+﻿<s:SurfaceUserControl x:Class="PrimerDesigner.BlastPrimerResult"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+    <s:ScatterViewItem Orientation="0" Height="50" Width="100" Background="Yellow" Name="scatterviewMomma" ContactDown="scatterviewMomma_ContactDown">
+        <Grid>
+            <Label Name="scoreLabel" VerticalAlignment="Top">Score:</Label>
+            <Label Name="startLabel" VerticalAlignment="Center">Start:</Label>
+            <Label Name="stopLabel" VerticalAlignment="Bottom">Stop:</Label>
+            </Grid>
+    </s:ScatterViewItem>
+</s:SurfaceUserControl>

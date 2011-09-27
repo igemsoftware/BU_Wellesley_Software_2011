@@ -1,0 +1,10 @@
+C:\Users\public Surface\Desktop\GnomeSurferPro\GenBank\bin\Release\GenBank.dll
+C:\Users\public Surface\Desktop\GnomeSurferPro\GenBank\bin\Release\GenBank.pdb
+C:\Users\public Surface\Desktop\GnomeSurferPro\GenBank\obj\Release\ResolveAssemblyReference.cache
+C:\Users\public Surface\Desktop\GnomeSurferPro\GenBank\obj\Release\GenBank.dll
+C:\Users\public Surface\Desktop\GnomeSurferPro\GenBank\obj\Release\GenBank.pdb
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\GenBank\bin\Release\GenBank.dll
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\GenBank\bin\Release\GenBank.pdb
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\GenBank\obj\Release\ResolveAssemblyReference.cache
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\GenBank\obj\Release\GenBank.dll
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\GenBank\obj\Release\GenBank.pdb

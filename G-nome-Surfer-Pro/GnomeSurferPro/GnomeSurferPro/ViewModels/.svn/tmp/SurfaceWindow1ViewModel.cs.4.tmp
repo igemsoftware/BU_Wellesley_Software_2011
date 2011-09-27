@@ -1,0 +1,269 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using GnomeSurferPro.ViewModels;
+using GenBank;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
+using System.Windows.Data;
+using Microsoft.Surface.Presentation;
+using Microsoft.Surface.Presentation.Controls;
+using System.Windows;
+using GnomeSurferPro.Models;
+
+namespace GnomeSurferPro.ViewModels
+{
+    public class SurfaceWindow1ViewModel:ViewModelBase
+    {
+        #region Private members
+
+        private ChromosomeBarViewModel _chromosomeBarViewModel;
+        private PublicationsViewModel _publicationsViewModel;
+        private ExtendedDesktopViewModel _extendedDesktopViewModel;
+        //private ObservableCollection<IPublication> _SVIpublicationCollection;
+        private TestSVIViewModel _testSVIViewModel;
+        private bool pubBoxAlreadyCreated = false;
+        private SearchMenuViewModel _initialSearchMenu;
+<<<<<<< .mine
+        private IGenBankProvider _genBankProvider = new GenBankProviderImpl(); //new FakeGenBankProvider();
+=======
+        private SearchShelfViewModel _persistentSearchMenu;
+        private IGenBankProvider _genBankProvider = new FakeGenBankProvider();
+>>>>>>> .r27
+
+        private CompositeCollection _allObjectsCollection;
+        private bool _initialSearchLayerVisible = true;
+        private GeneSearchBoxViewModel _geneSearchBoxVm;
+
+        #endregion Private members
+
+        #region Public Properties
+
+        public bool InitialSearchLayerVisible
+        {
+            get { return _initialSearchLayerVisible; }
+            set
+            {
+                if (_initialSearchLayerVisible != value)
+                {
+                    _initialSearchLayerVisible = value;
+                    OnPropertyChanged("InitialSearchLayerVisible");
+                }
+            }
+        }
+
+        public CompositeCollection AllObjectsCollection
+        {
+            get
+            {
+                return _allObjectsCollection;
+            }
+        }
+
+        public ChromosomeBarViewModel ChromosomeBarViewModel
+        {
+            get
+            {
+                return _chromosomeBarViewModel;
+            }
+            set
+            {
+                if (value != _chromosomeBarViewModel)
+                {
+                    _chromosomeBarViewModel = value;
+                    OnPropertyChanged("ChromosomeBarViewModel");
+                }
+            }
+        }
+
+        public PublicationsViewModel PublicationsViewModel
+        {
+            get
+            {
+                return _publicationsViewModel;
+            }
+            set
+            {
+                if (value != _publicationsViewModel)
+                {
+                    _publicationsViewModel = value;
+                    OnPropertyChanged("PublicationsViewModel");
+                }
+            }
+        }
+
+        public ExtendedDesktopViewModel ExtendedDesktopViewModel
+        {
+            get
+            {
+                return _extendedDesktopViewModel;
+            }
+            set
+            {
+                if (value != _extendedDesktopViewModel)
+                {
+                    _extendedDesktopViewModel = value;
+                    OnPropertyChanged("ExtendedDesktopViewModel");
+                }
+            }
+        }
+
+        public ObservableCollection<IPublication> TesterSVIPublicationCollection
+        {
+            get
+            {
+                return new ObservableCollection<IPublication>();
+            }
+        }
+
+        public TestSVIViewModel TestSVIViewModel
+        {
+            get
+            {
+                return _testSVIViewModel;
+            }
+            set
+            {
+                if (value != _testSVIViewModel)
+                {
+                    _testSVIViewModel = value;
+                    OnPropertyChanged("TestSVIViewModel");
+                }
+            }
+        }
+
+        public SearchMenuViewModel InitialSearchMenu
+        {
+            get
+            {
+                if (_initialSearchMenu == null)
+                    _initialSearchMenu = new SearchMenuViewModel(OnInitialChromosomeSelected);
+
+                return _initialSearchMenu;
+            }
+        }
+
+        public SearchShelfViewModel PersistentSearchMenu
+        {
+            get
+            {
+                if (_persistentSearchMenu == null)
+                    _persistentSearchMenu = new SearchShelfViewModel(OnChromosomeSelected);
+
+                return _persistentSearchMenu;
+            }
+        }
+
+        #endregion Public properties
+
+        public SurfaceWindow1ViewModel()
+        {
+            _allObjectsCollection = new CompositeCollection();
+
+            _chromosomeBarViewModel = new ChromosomeBarViewModel(_genBankProvider, this);
+            _testSVIViewModel = new TestSVIViewModel();
+            _geneSearchBoxVm = new GeneSearchBoxViewModel();
+            _extendedDesktopViewModel = new ExtendedDesktopViewModel(this);
+
+            _allObjectsCollection.Add(_chromosomeBarViewModel);
+<<<<<<< .mine
+=======
+            //_allObjectsCollection.Add(_publicationsViewModel);
+            _allObjectsCollection.Add(_geneSearchBoxVm);
+            _allObjectsCollection.Add(cc1);
+>>>>>>> .r27
+            _allObjectsCollection.Add(_testSVIViewModel);
+            _allObjectsCollection.Add(_extendedDesktopViewModel);
+<<<<<<< .mine
+=======
+            _allObjectsCollection.Add(PersistentSearchMenu);
+
+            //ExtendedDesktopViewModel must be instantiated in SurfaceWindow1.xaml.cs instead of here
+            //because of the event handlers
+
+>>>>>>> .r27
+        }
+
+        public void RenderSequenceView(IGene gene)
+        {
+            SequenceViewModel sequenceViewModel = new SequenceViewModel(this, gene);
+            int size = _allObjectsCollection.Add(sequenceViewModel);
+        }
+
+        public void RenderTranslationView(IGene gene)
+        {
+            TranslationViewModel translationViewModel = new TranslationViewModel(this, gene);
+            _allObjectsCollection.Add(translationViewModel);
+        }
+
+        public void RenderPublicationsView(IGene gene)
+        {
+            PublicationsViewModel publicationsViewModel = new PublicationsViewModel(this, gene);
+            _allObjectsCollection.Add(publicationsViewModel);
+        }
+
+        public void EraseItem(object viewModel)
+        {
+            if (_allObjectsCollection.Contains(viewModel))
+            {
+                _allObjectsCollection.Remove(viewModel);
+            }
+        }
+
+        #region Routed Events for Drag and Drop from SVI to LBI, not using in GnomeSurferPro
+
+        public void Routed_PublicationsArticle_PreviewContactDown(object sender, ContactEventArgs e)
+        {
+           // _publicationsViewModel.Routed_ScatterView_PreviewContactDown(sender, e);
+        }
+
+        public void Routed_PublicationsArticle_DragCanceled(object sender, SurfaceDragDropEventArgs e)
+        {
+            //if (!(e.Cursor.Data is PublicationsViewModel))
+            //{                
+            //    Publication publication = e.Cursor.Data as Publication;
+
+            //    if (SVIPublicationCollection.Contains(publication))//filter this method to only apply to pubArticles currently in mainSV
+            //    {
+            //        ScatterViewItem item = publication.DraggedElement as ScatterViewItem;
+            //        if (item != null)
+            //        {
+                        
+            //            item.Orientation = e.Cursor.GetOrientation((ScatterView)sender);
+            //            item.Center = e.Cursor.GetPosition((ScatterView)sender);
+            //            item.Visibility = Visibility.Visible;
+            //        }
+            //    }
+            //}
+        }
+
+        #endregion
+
+
+        public void Routed_PublicationsArticle_SVIInitialized(object sender, EventArgs e)
+        {
+            if (sender is ScatterViewItem && (sender as ScatterViewItem).DataContext != null)
+            {
+                //get the PublicationsArticleViewModel related to current SVI
+                int articleIndex = AllObjectsCollection.IndexOf((PublicationsArticleViewModel)(((ScatterViewItem)sender).DataContext));
+
+                //set cetner and orientation of newly constructed SVI to have "drop in place" effect
+                ((ScatterViewItem)sender).Center = ((PublicationsArticleViewModel)AllObjectsCollection[articleIndex]).SVICenter;
+                ((ScatterViewItem)sender).Orientation = ((PublicationsArticleViewModel)AllObjectsCollection[articleIndex]).SVIOrientation;
+            }
+        }
+
+        private void OnInitialChromosomeSelected(String chromosomeId)
+        {
+            OnChromosomeSelected(chromosomeId);
+            InitialSearchLayerVisible = false;
+        }
+
+        private void OnChromosomeSelected(String chromosomeId)
+        {
+            _chromosomeBarViewModel.ChromosomeId = chromosomeId;
+            _persistentSearchMenu.RetractShelf();
+        }
+    }
+}

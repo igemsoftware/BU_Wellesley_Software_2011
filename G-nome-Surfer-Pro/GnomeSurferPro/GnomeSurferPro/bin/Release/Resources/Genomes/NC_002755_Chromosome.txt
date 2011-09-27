@@ -1,0 +1,5 @@
+LENGTH=4403837 bp
+ACCESSION=NC_002755
+VERSION=GI:50953765
+ORGANISM=Mycobacterium tuberculosis CDC1551
+LINEAGE=Bacteria; Actinobacteria; Actinobacteridae; Actinomycetales; Corynebacterineae; Mycobacteriaceae; Mycobacterium; Mycobacterium tuberculosis complex.

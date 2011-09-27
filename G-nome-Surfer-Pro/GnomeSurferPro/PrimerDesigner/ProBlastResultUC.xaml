@@ -1,0 +1,11 @@
+﻿<s:SurfaceUserControl x:Class="PrimerDesigner.ProBlastResultUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    Margin="0"
+    Padding="0">
+        <Grid x:Name="resultGrid" Background="Transparent" Height="200" Width="200" Margin="0" Opacity="1">
+     
+    </Grid>
+    
+</s:SurfaceUserControl>

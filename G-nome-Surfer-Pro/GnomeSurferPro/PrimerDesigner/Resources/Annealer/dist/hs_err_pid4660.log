@@ -1,0 +1,65 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x02129354, pid=4660, tid=4556
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# j  java.lang.String.indexOf(I)I+0
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02011c00):  JavaThread "main" [_thread_in_Java, id=4556, stack(0x00200000,0x00250000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x00246fd0
+
+Registers:
+EAX=0x00000000, EBX=0x38a82910, ECX=0x00000459, EDX=0x38a81ab8
+ESP=0x00249fd0, EBP=0x00249ff0, ESI=0x380811c8, EDI=0x00249ffc
+EIP=0x02129354, EFLAGS=0x00010283
+
+Top of Stack: (sp=0x00249fd0)
+0x00249fd0:   00249fd0 380811c8 00249ffc 38a81ab8
+0x00249fe0:   00000000 38a82910 00000000 00249ff8
+0x00249ff0:   0024a020 02122f45 0000002f 240e6728
+0x0024a000:   0024a000 38087650 0024a02c 38a89d28
+0x0024a010:   00000000 38a8b348 00249ff8 0024a028
+0x0024a020:   0024a050 0212304d 240e6728 240a7f98
+0x0024a030:   0024a030 3808824a 0024a05c 38a89d28
+0x0024a040:   00000000 38a8b9a8 0024a028 0024a058 
+
+Instructions: (pc=0x02129354)
+0x02129334:   f8 89 4b 30 03 c8 3b 0d 30 58 a6 6d 0f 83 56 00
+0x02129344:   00 00 89 84 24 00 f0 ff ff 89 84 24 00 e0 ff ff
+0x02129354:   89 84 24 00 d0 ff ff 64 8b 04 25 00 00 00 00 8b
+0x02129364:   40 f4 c6 80 7d 01 00 00 00 80 3d 71 fa a6 6d 00 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x38a82910 is an oop
+{method} 
+ - klass: {other class}
+ECX=0x00000459 is an unknown value
+EDX=0x38a81ab8 is an oop
+{constant pool cache} 
+ - klass: {other class}
+ESP=0x00249fd0 is pointing into the stack for thread: 0x02011c00
+EBP=0x00249ff0 is pointing into the stack for thread: 0x02011c00
+ESI=0x380811c8 is an oop
+{constMethod} 
+ - klass: {other class}
+ - method:       0x38a82910 {method} 'indexOf' '(I)I' in 'java/lang/String'
+ - exceptions:   0x38080068
+bci_from(380811C8) = 0; print_codes():
+EDI=0x00249ffc is pointing into the stack for thread: 0x02011c00
+
+
+Stack: [0x00200000,0x00250000],  sp=0x00249fd0,  free space=295k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)

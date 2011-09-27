@@ -1,0 +1,137 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32756 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:211), pid=2804, tid=4736
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing windows-x86 )
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02057800):  JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=4736, stack(0x04380000,0x043d0000)]
+
+Stack: [0x04380000,0x043d0000],  sp=0x043cf49c,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x13379a]
+V  [jvm.dll+0x12e78c]
+V  [jvm.dll+0x53be9]
+V  [jvm.dll+0x53de2]
+V  [jvm.dll+0x53fe3]
+V  [jvm.dll+0x1f9be9]
+V  [jvm.dll+0x1f9ffa]
+V  [jvm.dll+0x1e3ad9]
+V  [jvm.dll+0x1e3b6c]
+V  [jvm.dll+0x1e3cbf]
+V  [jvm.dll+0x1e3f14]
+V  [jvm.dll+0x3db2d]
+V  [jvm.dll+0x3e655]
+V  [jvm.dll+0x1190d4]
+V  [jvm.dll+0x1411ac]
+C  [msvcr71.dll+0x9565]  endthreadex+0xa0
+C  [kernel32.dll+0x4d309]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x416c3]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x41696]  RtlInitializeExceptionChain+0x36
+
+
+Current CompileTask:
+C1:   7446  16  !   sun.nio.cs.SingleByteDecoder.decodeArrayLoop(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult; (308 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02066400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=4708, stack(0x043d0000,0x04420000)]
+=>0x02057800 JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=4736, stack(0x04380000,0x043d0000)]
+  0x02056800 JavaThread "Attach Listener" daemon [_thread_blocked, id=5124, stack(0x04330000,0x04380000)]
+  0x02055800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1288, stack(0x042e0000,0x04330000)]
+  0x02050000 JavaThread "Finalizer" daemon [_thread_blocked, id=5820, stack(0x04290000,0x042e0000)]
+  0x0204b800 JavaThread "Reference Handler" daemon [_thread_blocked, id=5796, stack(0x04240000,0x04290000)]
+  0x01ff1c00 JavaThread "main" [_thread_in_vm, id=4624, stack(0x00220000,0x00270000)]
+
+Other Threads:
+  0x0200fc00 VMThread [stack: 0x041f0000,0x04240000] [id=3640]
+  0x02068000 WatcherThread [stack: 0x04420000,0x04470000] [id=4800]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 1375K [0x24080000, 0x245d0000, 0x295d0000)
+  eden space 4416K,  31% used [0x24080000, 0x241d7e80, 0x244d0000)
+  from space 512K,   0% used [0x244d0000, 0x244d0000, 0x24550000)
+  to   space 512K,   0% used [0x24550000, 0x24550000, 0x245d0000)
+ tenured generation   total 10944K, used 0K [0x295d0000, 0x2a080000, 0x34080000)
+   the space 10944K,   0% used [0x295d0000, 0x295d0000, 0x295d0200, 0x2a080000)
+ compacting perm gen  total 12288K, used 314K [0x34080000, 0x34c80000, 0x38080000)
+   the space 12288K,   2% used [0x34080000, 0x340ce9b8, 0x340cea00, 0x34c80000)
+    ro space 10240K,  51% used [0x38080000, 0x385adff8, 0x385ae000, 0x38a80000)
+    rw space 12288K,  55% used [0x38a80000, 0x3911c208, 0x3911c400, 0x39680000)
+
+Code Cache  [0x020e0000, 0x02158000, 0x040e0000)
+ total_blobs=141 nmethods=16 adapters=62 free_code_cache=33084544 largest_free_block=0
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Windows\system32\java.exe
+0x77580000 - 0x776a8000 	C:\Windows\system32\ntdll.dll
+0x76060000 - 0x7613c000 	C:\Windows\system32\kernel32.dll
+0x75f50000 - 0x76016000 	C:\Windows\system32\ADVAPI32.dll
+0x76360000 - 0x76423000 	C:\Windows\system32\RPCRT4.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76430000 - 0x764cd000 	C:\Windows\system32\USER32.dll
+0x75e10000 - 0x75e5b000 	C:\Windows\system32\GDI32.dll
+0x72af0000 - 0x72b22000 	C:\Windows\system32\WINMM.dll
+0x764d0000 - 0x7657a000 	C:\Windows\system32\msvcrt.dll
+0x76140000 - 0x76285000 	C:\Windows\system32\ole32.dll
+0x770f0000 - 0x7717d000 	C:\Windows\system32\OLEAUT32.dll
+0x73f90000 - 0x73fcd000 	C:\Windows\system32\OLEACC.dll
+0x75df0000 - 0x75e0e000 	C:\Windows\system32\IMM32.DLL
+0x76290000 - 0x76358000 	C:\Windows\system32\MSCTF.dll
+0x75a50000 - 0x75a7c000 	C:\Windows\system32\apphelp.dll
+0x75ca0000 - 0x75ca9000 	C:\Windows\system32\LPK.DLL
+0x77180000 - 0x771fd000 	C:\Windows\system32\USP10.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x75c10000 - 0x75c17000 	C:\Windows\system32\PSAPI.DLL
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+
+VM Arguments:
+java_command: Annealer.jar GTGCCCCACCGCTGCGCGGCGCA AGTCGTCGCCGG
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files\TortoiseSVN\bin;C:\Program Files\SlikSvn\bin\;C:\Windows\System32\WindowsPowerShell\v1.0\
+USERNAME=public Surface
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Vista Build 6002 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2095568k(386868k free), swap 5172948k(746020k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.1-b02) for windows-x86 JRE (1.6.0_26-b03), built on May  4 2011 00:50:59 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Mon Aug 01 07:44:44 2011
+elapsed time: 7 seconds
+

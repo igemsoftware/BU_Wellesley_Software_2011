@@ -1,0 +1,121 @@
+﻿<s:SurfaceUserControl x:Class="GnomeSurferPro.Views.ExtendedDesktop"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    xmlns:viewmodels="clr-namespace:GnomeSurferPro.ViewModels"
+    xmlns:views="clr-namespace:GnomeSurferPro.Views"
+    xmlns:local="clr-namespace:GnomeSurferPro"
+    xmlns:selectors="clr-namespace:GnomeSurferPro.Selectors"
+    >
+    
+    <s:SurfaceUserControl.Resources>
+        <Style x:Key="SviScaleToContent" TargetType="{x:Type s:ScatterViewItem}" >
+            <Setter Property="MinWidth" Value="{Binding Path=Content.MinWidth, RelativeSource={RelativeSource Self}, Mode=OneWay}"/>
+            <Setter Property="MinHeight" Value="{Binding Path=Content.MinHeight, RelativeSource={RelativeSource Self}, Mode=OneWay}"/>
+            <Setter Property="MaxWidth" Value="{Binding Path=Content.MaxWidth, RelativeSource={RelativeSource Self}, Mode=OneWay}"/>
+            <Setter Property="MaxHeight" Value="{Binding Path=Content.MaxHeight, RelativeSource={RelativeSource Self}, Mode=OneWay}"/>
+            <Setter Property="Width" Value="{Binding Path=Content.Width, RelativeSource={RelativeSource Self}, Mode=TwoWay}"/>
+            <Setter Property="Height" Value="{Binding Path=Content.Height, RelativeSource={RelativeSource Self}, Mode=TwoWay}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type s:ScatterViewItem}">
+                        <ContentPresenter />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MoveableSvi" BasedOn="{StaticResource SviScaleToContent}" 
+               TargetType="{x:Type s:ScatterViewItem}">
+            <Setter Property="s:ScatterViewItem.CanMove" Value="True" />
+            <Setter Property="s:ScatterViewItem.CanScale" Value="True" />
+            <Setter Property="s:ScatterViewItem.CanRotate" Value="True" />
+            <Setter Property="BorderThickness" Value="20"/>
+            <Setter Property="Center" Value="400,200"/>
+            <EventSetter Event="s:ScatterManipulationCompleted" Handler="SendToMain_ScatterManipulationCompleted" />
+        </Style>
+        
+        <Style x:Key="PublicationsSVIStyle" TargetType="{x:Type s:ScatterViewItem}">
+            <Setter Property="CanMove" Value="True" />
+            <Setter Property="CanScale" Value="False" />
+            <Setter Property="CanRotate" Value="False" />
+            <Setter Property="Orientation" Value="0" />
+            <Setter Property="MinWidth" Value="320"/>
+            <Setter Property="MinHeight" Value="240"/>
+            <Setter Property="Width" Value="320"/>
+            <Setter Property="Height" Value="240"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="BorderThickness" Value="20"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <EventSetter Event="s:ScatterManipulationCompleted" Handler="SendToMain_ScatterManipulationCompleted" />
+        </Style>
+        
+        <Style x:Key="PublicationsArticleSVIStyle" BasedOn="{StaticResource MoveableSvi}" TargetType="{x:Type s:ScatterViewItem}">
+            <Setter Property="Width" Value="480"/>
+            <Setter Property="Height" Value="320"/>
+            <Setter Property="CanScale" Value="False" />
+            <EventSetter Event="s:Contacts.PreviewContactDown" Handler="PublicationsArticle_PreviewContactDown"/>
+            <EventSetter Event="s:ScatterViewItem.Loaded" Handler="PublicationsArticle_SVIInitialized"/>
+        </Style>
+
+        <!-- Used for sequences and translations-->
+        <Style x:Key="SeqTransSVIStyle" BasedOn="{StaticResource MoveableSvi}" TargetType="{x:Type s:ScatterViewItem}">
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="MaxHeight" Value="500"/>
+            <Setter Property="MinWidth" Value="300"/>
+            <Setter Property="MinHeight" Value="150"/>
+            <EventSetter Event="s:Contacts.PreviewContactUp" Handler="SeqTransSVI_PreviewContactUp"/>
+            <EventSetter Event="s:ScatterViewItem.Loaded" Handler="SeqTransSVI_Initialized"/>
+        </Style>
+
+        <Style x:Key="GeneInfoSVIStyle" BasedOn="{StaticResource MoveableSvi}" TargetType="{x:Type s:ScatterViewItem}">
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="MaxHeight" Value="500"/>
+            <Setter Property="MinWidth" Value="300"/>
+            <Setter Property="MinHeight" Value="150"/>
+        </Style>
+
+        <Style x:Key="TestSVIStyle" BasedOn="{StaticResource MoveableSvi}" TargetType="{x:Type s:ScatterViewItem}">
+        </Style>
+
+        <DataTemplate x:Key="PublicationsSVIDataTemplate">
+            <views:PublicationsArticle />
+        </DataTemplate>
+        
+        <DataTemplate x:Key="SequenceTemplate">
+            <views:SequenceView />
+        </DataTemplate>
+
+        <DataTemplate x:Key="TranslationTemplate">
+            <views:TranslationView />
+        </DataTemplate>
+
+        <DataTemplate x:Key="TestSVITemplate">
+            <views:TestSVI />
+        </DataTemplate>
+
+        <DataTemplate x:Key="NotesTemplate">
+            <views:NotesView />
+        </DataTemplate>
+
+
+        <selectors:ExtendedDesktopStyleSelector x:Key="myStyleSelector"/>
+        <selectors:ExtendedDesktopTemplateSelector x:Key="myDataTemplateSelector"/>
+    </s:SurfaceUserControl.Resources>
+    
+    <s:ScatterView Name="workspaceBarSV" Width="1024" Height="730">
+        <s:ScatterViewItem Name="workspaceBlockerSVI" Width="1024" Height="730" Center="512,395"
+                           CanMove="False" CanRotate="False" CanScale="False" 
+                           ShowsActivationEffects="False">
+            <s:ScatterView Name="workspaceActualSV" Width="1024" Height="730"
+                           Background="Gainsboro"
+                           ItemsSource="{Binding WorkspaceCollection}"
+                           ItemContainerStyleSelector="{StaticResource myStyleSelector}" 
+                           ItemTemplateSelector="{StaticResource myDataTemplateSelector}"
+                           s:SurfaceDragDrop.PreviewDragCanceled="PublicationsArticle_DragCanceled">
+            </s:ScatterView>
+        </s:ScatterViewItem>
+    </s:ScatterView>
+</s:SurfaceUserControl>

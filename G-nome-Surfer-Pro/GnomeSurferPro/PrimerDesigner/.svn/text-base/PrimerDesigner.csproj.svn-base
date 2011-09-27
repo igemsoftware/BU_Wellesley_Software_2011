@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{57CF05A4-B08E-4985-99FC-FA955544AE2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrimerDesigner</RootNamespace>
+    <AssemblyName>PrimerDesigner</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Microsoft.Surface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Surface.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Surface.Presentation.Generic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="alignmentTests.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlastParser.cs" />
+    <Compile Include="BlastPrimerResult.xaml.cs">
+      <DependentUpon>BlastPrimerResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlastResult.cs" />
+    <Compile Include="BLASTworker.cs" />
+    <Compile Include="PrimerDesignerUserControl.xaml.cs">
+      <DependentUpon>PrimerDesignerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProBlastResultUC.xaml.cs">
+      <DependentUpon>ProBlastResultUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealBlastPrimerResult.cs" />
+    <Compile Include="RealPrimerBlastRun.cs" />
+    <Compile Include="RealPrimerBlastUC.xaml.cs">
+      <DependentUpon>RealPrimerBlastUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResultSVI.xaml.cs">
+      <DependentUpon>ResultSVI.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Executable\blast-2.2.25+\bin\blastdbcheck.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\blastdbcmd.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\blastdb_aliastool.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\blastn.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\blastp.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\blastx.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\blast_formatter.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\convert2blastmask.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\dustmasker.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\makeblastdb.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\makembindex.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\psiblast.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\rpsblast.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\rpstblastn.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\segmasker.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\tblastn.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\tblastx.exe" />
+    <Content Include="Executable\blast-2.2.25+\bin\windowmasker.exe" />
+    <Content Include="Executable\blast-2.2.25+\doc\README.txt" />
+    <Content Include="Executable\blast-2.2.25+\Uninstall-ncbi-blast-2.2.25+.exe" />
+    <Content Include="Executable\ncbi-blast-2.2.25+-win32.exe" />
+    <Content Include="PrimerDesigner.xml" />
+    <Content Include="Resources\Annealer\build.xml" />
+    <Content Include="Resources\Annealer\build\classes\annealer\biojava.jar" />
+    <Content Include="Resources\Annealer\build\classes\biojava.jar" />
+    <Content Include="Resources\Annealer\dist\Annealer.jar" />
+    <Content Include="Resources\Annealer\dist\lib\biojava.jar" />
+    <Content Include="Resources\Annealer\dist\README.TXT" />
+    <Content Include="Resources\Annealer\lib\biojava\biojava.jar" />
+    <Content Include="Resources\Annealer\lib\CopyLibs\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
+    <Content Include="Resources\Annealer\lib\junit\junit-3.8.2.jar" />
+    <Content Include="Resources\Annealer\lib\junit_4\junit-4.5-src.jar" />
+    <Content Include="Resources\Annealer\lib\junit_4\junit-4.5.jar" />
+    <Content Include="Resources\Annealer\nbproject\build-impl.xml" />
+    <Content Include="Resources\Annealer\nbproject\private\private.xml" />
+    <Content Include="Resources\Annealer\nbproject\project.xml" />
+    <Content Include="Resources\Annealer\src\annealer\Annealer.java" />
+    <Content Include="Resources\Annealer\src\annealer\biojava.jar" />
+    <Content Include="Resources\Annealer\src\annealer\Main.java" />
+    <Content Include="Resources\Annealer\src\biojava.jar" />
+    <Content Include="Resources\blast_results_CDC1551.xml" />
+    <Content Include="Resources\blast_results_F11.xml" />
+    <Content Include="Resources\blast_results_H37Ra.xml" />
+    <Content Include="Resources\blast_results_H37Rv.xml" />
+    <Content Include="Resources\blast_results_K7N1435.xml" />
+    <Content Include="Resources\icon.png" />
+    <Content Include="Resources\iconPreview.png" />
+    <Content Include="Resources\primer_source.txt" />
+    <Content Include="Resources\WindowBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BlastPrimerResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrimerDesignerUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProBlastResultUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RealPrimerBlastUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResultSVI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Executable\blast-2.2.25+\bin\legacy_blast.pl" />
+    <None Include="Executable\blast-2.2.25+\bin\update_blastdb.pl" />
+    <None Include="Resources\Annealer\build\built-jar.properties" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\COMMIT_EDITMSG" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\config" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\description" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\FETCH_HEAD" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\HEAD" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\applypatch-msg.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\commit-msg.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\post-commit.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\post-receive.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\post-update.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\pre-applypatch.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\pre-commit.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\pre-rebase.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\hooks\update.sample" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\index" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\info\exclude" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\logs\HEAD" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\logs\refs\heads\master" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\logs\refs\remotes\origin\master" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\23\d9815ec02573313f8fe39845dc4da514aea537" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\25\2ef99773138e08097495052115f24a0a207c89" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\2d\d3f1875e1d3c9548eeec5362f4a173bc7a65ff" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\3f\f0223822beabda9fef2c012985fe18a7761350" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\47\a179efc0f5c93574ff1a29540807a4384afc59" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\49\80b383b9c148abc659944d81ae944093ab45fe" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\56\f4926999ef5918e792e5c43fb59887a981a4cc" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\63\63ec48cef8f36183316140a83b3646d66c0488" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\6f\26148b51f5f3e6efffc867a36ac5be37b5548a" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\7b\b87151ef2d6ea5cc9e9e2b792c3d69f7ec217c" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\7b\c65f1587e3815eebed03bef5d3b5be80ecc024" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\97\b7b319182043002343b5d16e40a0caa85765e9" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\a1\2908e7facd19a762ac6f70de802fef9d9a078e" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\af\38fb6c090493d5b88486a710a07e07e9e05b8e" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\c2\d9aaa8a3b7c4c746f58206fd5f87e0326f5a7a" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\c7\667f816b5b7b22259d71492b000eee01699e3c" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\cb\ef0378bd936d28cc8066d2e17c47350e7ee7dc" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\cc\25cf9a42736a733c1cf4d8d637ef190dbb74a0" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\de\b10bf4ec9c248551ccb73df813ce38ce74fb5b" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\e9\a03c70927284d58e064e9821ed83a792228cf6" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\objects\fd\39c58142f11fe86628318b2697d8c074a8e4b9" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\ORIG_HEAD" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\refs\heads\master" />
+    <None Include="Resources\Annealer\build\classes\annealer\.git\refs\remotes\origin\master" />
+    <None Include="Resources\Annealer\build\classes\annealer\Annealer.class" />
+    <None Include="Resources\Annealer\build\classes\annealer\Main.class" />
+    <None Include="Resources\Annealer\lib\junit\junit-3.8.2-api.zip" />
+    <None Include="Resources\Annealer\lib\junit_4\junit-4.5-api.zip" />
+    <None Include="Resources\Annealer\lib\nblibraries.properties" />
+    <None Include="Resources\Annealer\manifest.mf" />
+    <None Include="Resources\Annealer\nbproject\genfiles.properties" />
+    <None Include="Resources\Annealer\nbproject\private\config.properties" />
+    <None Include="Resources\Annealer\nbproject\private\private.properties" />
+    <None Include="Resources\Annealer\nbproject\project.properties" />
+    <None Include="Resources\Annealer\public int pairwiseAlignment.docx" />
+    <None Include="Resources\Annealer\README" />
+    <None Include="Resources\Annealer\src\annealer\.git\COMMIT_EDITMSG" />
+    <None Include="Resources\Annealer\src\annealer\.git\config" />
+    <None Include="Resources\Annealer\src\annealer\.git\description" />
+    <None Include="Resources\Annealer\src\annealer\.git\FETCH_HEAD" />
+    <None Include="Resources\Annealer\src\annealer\.git\HEAD" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\applypatch-msg.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\commit-msg.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\post-commit.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\post-receive.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\post-update.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\pre-applypatch.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\pre-commit.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\pre-rebase.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\hooks\update.sample" />
+    <None Include="Resources\Annealer\src\annealer\.git\index" />
+    <None Include="Resources\Annealer\src\annealer\.git\info\exclude" />
+    <None Include="Resources\Annealer\src\annealer\.git\logs\HEAD" />
+    <None Include="Resources\Annealer\src\annealer\.git\logs\refs\heads\master" />
+    <None Include="Resources\Annealer\src\annealer\.git\logs\refs\remotes\origin\master" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\23\d9815ec02573313f8fe39845dc4da514aea537" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\25\2ef99773138e08097495052115f24a0a207c89" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\2d\d3f1875e1d3c9548eeec5362f4a173bc7a65ff" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\3f\f0223822beabda9fef2c012985fe18a7761350" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\47\a179efc0f5c93574ff1a29540807a4384afc59" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\49\80b383b9c148abc659944d81ae944093ab45fe" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\56\f4926999ef5918e792e5c43fb59887a981a4cc" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\63\63ec48cef8f36183316140a83b3646d66c0488" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\6f\26148b51f5f3e6efffc867a36ac5be37b5548a" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\7b\b87151ef2d6ea5cc9e9e2b792c3d69f7ec217c" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\7b\c65f1587e3815eebed03bef5d3b5be80ecc024" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\97\b7b319182043002343b5d16e40a0caa85765e9" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\a1\2908e7facd19a762ac6f70de802fef9d9a078e" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\af\38fb6c090493d5b88486a710a07e07e9e05b8e" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\c2\d9aaa8a3b7c4c746f58206fd5f87e0326f5a7a" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\c7\667f816b5b7b22259d71492b000eee01699e3c" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\cb\ef0378bd936d28cc8066d2e17c47350e7ee7dc" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\cc\25cf9a42736a733c1cf4d8d637ef190dbb74a0" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\de\b10bf4ec9c248551ccb73df813ce38ce74fb5b" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\e9\a03c70927284d58e064e9821ed83a792228cf6" />
+    <None Include="Resources\Annealer\src\annealer\.git\objects\fd\39c58142f11fe86628318b2697d8c074a8e4b9" />
+    <None Include="Resources\Annealer\src\annealer\.git\ORIG_HEAD" />
+    <None Include="Resources\Annealer\src\annealer\.git\refs\heads\master" />
+    <None Include="Resources\Annealer\src\annealer\.git\refs\remotes\origin\master" />
+    <None Include="Resources\CDC1551.fasta" />
+    <None Include="Resources\CDC1551.fasta.nhr" />
+    <None Include="Resources\CDC1551.fasta.nin" />
+    <None Include="Resources\CDC1551.fasta.nnd" />
+    <None Include="Resources\CDC1551.fasta.nni" />
+    <None Include="Resources\CDC1551.fasta.nog" />
+    <None Include="Resources\CDC1551.fasta.nsd" />
+    <None Include="Resources\CDC1551.fasta.nsi" />
+    <None Include="Resources\CDC1551.fasta.nsq" />
+    <None Include="Resources\F11.fasta" />
+    <None Include="Resources\F11.fasta.nhr" />
+    <None Include="Resources\F11.fasta.nin" />
+    <None Include="Resources\F11.fasta.nnd" />
+    <None Include="Resources\F11.fasta.nni" />
+    <None Include="Resources\F11.fasta.nog" />
+    <None Include="Resources\F11.fasta.nsd" />
+    <None Include="Resources\F11.fasta.nsi" />
+    <None Include="Resources\F11.fasta.nsq" />
+    <None Include="Resources\H37Ra.fasta" />
+    <None Include="Resources\H37Ra.fasta.nhr" />
+    <None Include="Resources\H37Ra.fasta.nin" />
+    <None Include="Resources\H37Ra.fasta.nnd" />
+    <None Include="Resources\H37Ra.fasta.nni" />
+    <None Include="Resources\H37Ra.fasta.nog" />
+    <None Include="Resources\H37Ra.fasta.nsd" />
+    <None Include="Resources\H37Ra.fasta.nsi" />
+    <None Include="Resources\H37Ra.fasta.nsq" />
+    <None Include="Resources\H37Rv.fasta" />
+    <None Include="Resources\H37Rv.fasta.nhr" />
+    <None Include="Resources\H37Rv.fasta.nin" />
+    <None Include="Resources\H37Rv.fasta.nnd" />
+    <None Include="Resources\H37Rv.fasta.nni" />
+    <None Include="Resources\H37Rv.fasta.nog" />
+    <None Include="Resources\H37Rv.fasta.nsd" />
+    <None Include="Resources\H37Rv.fasta.nsi" />
+    <None Include="Resources\H37Rv.fasta.nsq" />
+    <None Include="Resources\K7N1435.fasta" />
+    <None Include="Resources\K7N1435.fasta.nhr" />
+    <None Include="Resources\K7N1435.fasta.nin" />
+    <None Include="Resources\K7N1435.fasta.nnd" />
+    <None Include="Resources\K7N1435.fasta.nni" />
+    <None Include="Resources\K7N1435.fasta.nog" />
+    <None Include="Resources\K7N1435.fasta.nsd" />
+    <None Include="Resources\K7N1435.fasta.nsi" />
+    <None Include="Resources\K7N1435.fasta.nsq" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenBank\GenBank.csproj">
+      <Project>{B72B2095-E516-409F-A64E-6A5C825F39B8}</Project>
+      <Name>GenBank</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Annealer\build\classes\annealer\.git\objects\info\" />
+    <Folder Include="Resources\Annealer\build\classes\annealer\.git\objects\pack\" />
+    <Folder Include="Resources\Annealer\build\classes\annealer\.git\refs\tags\" />
+    <Folder Include="Resources\Annealer\build\empty\" />
+    <Folder Include="Resources\Annealer\src\annealer\.git\objects\info\" />
+    <Folder Include="Resources\Annealer\src\annealer\.git\objects\pack\" />
+    <Folder Include="Resources\Annealer\src\annealer\.git\refs\tags\" />
+    <Folder Include="Resources\Annealer\test\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,42 @@
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\bin\Debug\PrimerDesigner.dll
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\bin\Debug\PrimerDesigner.pdb
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\bin\Debug\GenBank.dll
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\bin\Debug\GenBank.pdb
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\App.baml
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesignerUserControl.baml
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\ProBlastResultUC.baml
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\ResultSVI.baml
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\App.g.cs
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesignerUserControl.g.cs
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\ProBlastResultUC.g.cs
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\ResultSVI.g.cs
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner_MarkupCompile.cache
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner.g.resources
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner.dll
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner.pdb
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\BlastPrimerResult.baml
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\RealPrimerBlastUC.baml
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\BlastPrimerResult.g.cs
+C:\Users\public Surface\Desktop\GnomeSurferPro\GnomeSurferPro\PrimerDesigner\obj\Debug\RealPrimerBlastUC.g.cs
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\bin\Debug\PrimerDesigner.dll
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\bin\Debug\PrimerDesigner.pdb
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\bin\Debug\GenBank.dll
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\bin\Debug\GenBank.pdb
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\ResolveAssemblyReference.cache
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\App.baml
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\BlastPrimerResult.baml
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesignerUserControl.baml
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\ProBlastResultUC.baml
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\RealPrimerBlastUC.baml
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\ResultSVI.baml
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\App.g.cs
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\BlastPrimerResult.g.cs
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesignerUserControl.g.cs
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\ProBlastResultUC.g.cs
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\RealPrimerBlastUC.g.cs
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\ResultSVI.g.cs
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner_MarkupCompile.cache
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner.g.resources
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner.dll
+C:\ProgramData\Microsoft\Surface\Projects\G-nome-Surfer-Pro\GnomeSurferPro\PrimerDesigner\obj\Debug\PrimerDesigner.pdb

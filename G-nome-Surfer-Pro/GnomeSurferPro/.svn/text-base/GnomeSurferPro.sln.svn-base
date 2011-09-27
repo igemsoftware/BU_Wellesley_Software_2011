@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeSurferPro", "GnomeSurferPro\GnomeSurferPro.csproj", "{71AB803B-CD92-4EA9-AA2F-392AA478BE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenBank", "GenBank\GenBank.csproj", "{B72B2095-E516-409F-A64E-6A5C825F39B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerDesigner", "PrimerDesigner\PrimerDesigner.csproj", "{57CF05A4-B08E-4985-99FC-FA955544AE2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71AB803B-CD92-4EA9-AA2F-392AA478BE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AB803B-CD92-4EA9-AA2F-392AA478BE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71AB803B-CD92-4EA9-AA2F-392AA478BE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71AB803B-CD92-4EA9-AA2F-392AA478BE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72B2095-E516-409F-A64E-6A5C825F39B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72B2095-E516-409F-A64E-6A5C825F39B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72B2095-E516-409F-A64E-6A5C825F39B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72B2095-E516-409F-A64E-6A5C825F39B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CF05A4-B08E-4985-99FC-FA955544AE2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CF05A4-B08E-4985-99FC-FA955544AE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CF05A4-B08E-4985-99FC-FA955544AE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CF05A4-B08E-4985-99FC-FA955544AE2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

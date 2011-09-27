@@ -1,0 +1,5 @@
+LENGTH=6988209 bp
+ACCESSION=NC_008596
+VERSION=GI:118467340
+ORGANISM=Mycobacterium smegmatis str. MC2 155
+LINEAGE=Bacteria; Actinobacteria; Actinobacteridae; Actinomycetales; Corynebacterineae; Mycobacteriaceae; Mycobacterium.

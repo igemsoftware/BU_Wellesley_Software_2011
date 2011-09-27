@@ -1,0 +1,23 @@
+﻿<s:SurfaceUserControl x:Class="PrimerDesigner.RealPrimerBlastUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+    
+    <s:ScatterView Name="Momma" Height="760" Width="1024" Background="Transparent">
+        <s:ScatterViewItem Height="760" Width="1024" Background="Transparent" CanMove="False" CanRotate="False" CanScale="False" ShowsActivationEffects="False" IsTopmostOnActivation="False" Center="512,380">
+            <Canvas Name="Daddy" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1024" Height="760">
+                <Polygon Name="poly1"
+                    Points="512,350 500,125 200,125 512,350"
+                    Stroke="PaleGoldenrod"
+                    StrokeThickness="2" Visibility="Hidden">
+                    <Polygon.Fill>
+                        <SolidColorBrush Color="Beige" Opacity="0.4"/>
+                    </Polygon.Fill>
+                </Polygon>
+            </Canvas>
+        </s:ScatterViewItem>
+        <s:ScatterViewItem Height="100"  Name="scatterViewItem1" VerticalAlignment="Top" Width="1024" Background="Teal" CanMove="False" CanRotate="False" CanScale="False" Center="512,50" IsTopmostOnActivation="False" />
+        
+    </s:ScatterView>
+    
+</s:SurfaceUserControl>

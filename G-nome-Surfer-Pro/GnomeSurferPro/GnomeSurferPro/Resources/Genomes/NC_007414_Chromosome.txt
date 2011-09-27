@@ -1,0 +1,5 @@
+LENGTH=92077 bp
+ACCESSION=NC_007414
+VERSION=GI:75994447
+ORGANISM=Escherichia coli O157:H7 str. EDL933
+LINEAGE=Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacteriales; Enterobacteriaceae; Escherichia.

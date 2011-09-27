@@ -1,0 +1,5 @@
+LENGTH=4424435 bp
+ACCESSION=NC_009565
+VERSION=GI:148821191
+ORGANISM=Mycobacterium tuberculosis F11
+LINEAGE=Bacteria; Actinobacteria; Actinobacteridae; Actinomycetales; Corynebacterineae; Mycobacteriaceae; Mycobacterium; Mycobacterium tuberculosis complex.

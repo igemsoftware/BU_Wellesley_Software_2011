@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewmodels="clr-namespace:GnomeSurferPro.ViewModels"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    x:Class="GnomeSurferPro.PublicationsResourceDictionary"
+    x:ClassModifier="public">
+    
+    <!--App sources this file so that PublicationsListBox.xaml and SurfaceWindow1.xaml can reference its content-->
+    
+    <!--Reference the PublicationsViewModel class-->
+    <!--<viewmodels:PublicationsViewModel x:Key="PublicationsViewModel"/>-->
+
+    <!-- Publication ListboxItem Data Template-->
+    
+
+</ResourceDictionary>

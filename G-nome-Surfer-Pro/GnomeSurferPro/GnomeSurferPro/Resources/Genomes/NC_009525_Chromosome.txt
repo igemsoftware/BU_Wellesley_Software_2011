@@ -1,0 +1,5 @@
+LENGTH=4419977 bp
+ACCESSION=NC_009525
+VERSION=GI:148659757
+ORGANISM=Mycobacterium tuberculosis H37Ra
+LINEAGE=Bacteria; Actinobacteria; Actinobacteridae; Actinomycetales; Corynebacterineae; Mycobacteriaceae; Mycobacterium; Mycobacterium tuberculosis complex.

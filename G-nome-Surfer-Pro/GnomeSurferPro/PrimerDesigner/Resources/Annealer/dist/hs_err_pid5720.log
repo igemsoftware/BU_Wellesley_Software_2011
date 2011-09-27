@@ -1,0 +1,153 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d8ea683, pid=5720, tid=6308
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xfa683]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02191c00):  JavaThread "Unknown thread" [_thread_in_vm, id=6308, stack(0x002e0000,0x00330000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x0032cb44
+
+Registers:
+EAX=0x00003000, EBX=0x00000000, ECX=0x0032cb44, EDX=0x002e6030
+ESP=0x0032fb50, EBP=0x0032fbac, ESI=0x00000003, EDI=0x0032fb44
+EIP=0x6d8ea683, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x0032fb50)
+0x0032fb50:   00379c08 02191c00 6d8eae03 00000004
+0x0032fb60:   02191c00 02191c00 02191c00 00379c00
+0x0032fb70:   775e4d70 760aa894 0032fba0 0032fb80
+0x0032fb80:   00da7a64 00000000 0032fba8 6d92c04a
+0x0032fb90:   0032fba0 0032fc0c 0032fbb4 6d90375f
+0x0032fba0:   0032fc74 0000000a 00000000 0032fbf0
+0x0032fbb0:   6d97c531 0032fc6c 0032fc18 0032fc28
+0x0032fbc0:   02289290 00000004 02191c00 02191c00 
+
+Instructions: (pc=0x6d8ea683)
+0x6d8ea663:   d9 18 04 00 8b f8 a1 20 5f a5 6d be 01 00 00 00
+0x6d8ea673:   3b c6 7c 1c e8 d4 2d 04 00 0f af c6 8b cf 2b c8
+0x6d8ea683:   c7 01 00 00 00 00 a1 20 5f a5 6d 46 3b f0 7e e4
+0x6d8ea693:   5f 5e c3 cc cc cc cc cc cc cc cc cc cc 55 8b ec 
+
+
+Register to memory mapping:
+
+EAX=0x00003000 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x0032cb44 is pointing into the stack for thread: 0x02191c00
+EDX=0x002e6030 is pointing into the stack for thread: 0x02191c00
+ESP=0x0032fb50 is pointing into the stack for thread: 0x02191c00
+EBP=0x0032fbac is pointing into the stack for thread: 0x02191c00
+ESI=0x00000003 is an unknown value
+EDI=0x0032fb44 is pointing into the stack for thread: 0x02191c00
+
+
+Stack: [0x002e0000,0x00330000],  sp=0x0032fb50,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xfa683]
+V  [jvm.dll+0x18c531]
+V  [jvm.dll+0xfaecd]
+V  [jvm.dll+0x7deb7]
+V  [jvm.dll+0x7ed1e]
+V  [jvm.dll+0x7f009]
+V  [jvm.dll+0x7f126]
+V  [jvm.dll+0x7ef57]
+V  [jvm.dll+0x7f126]
+V  [jvm.dll+0x114183]
+V  [jvm.dll+0x1187d2]
+V  [jvm.dll+0x9ec30]
+C  [java.exe+0x1657]
+C  [java.exe+0x1e2c]
+C  [java.exe+0x85d4]
+C  [kernel32.dll+0x4d309]
+C  [ntdll.dll+0x416c3]
+C  [ntdll.dll+0x41696]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x02191c00 JavaThread "Unknown thread" [_thread_in_vm, id=6308, stack(0x002e0000,0x00330000)]
+
+Other Threads:
+  0x021afc00 VMThread [stack: 0x014d0000,0x01520000] [id=6328]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 88K [0x24080000, 0x245d0000, 0x295d0000)
+  eden space 4416K,   2% used [0x24080000, 0x24096160, 0x244d0000)
+  from space 512K,   0% used [0x244d0000, 0x244d0000, 0x24550000)
+  to   space 512K,   0% used [0x24550000, 0x24550000, 0x245d0000)
+ tenured generation   total 10944K, used 0K [0x295d0000, 0x2a080000, 0x34080000)
+   the space 10944K,   0% used [0x295d0000, 0x295d0000, 0x295d0200, 0x2a080000)
+ compacting perm gen  total 12288K, used 2K [0x34080000, 0x34c80000, 0x38080000)
+   the space 12288K,   0% used [0x34080000, 0x34080828, 0x34080a00, 0x34c80000)
+    ro space 10240K,  51% used [0x38080000, 0x385adff8, 0x385ae000, 0x38a80000)
+    rw space 12288K,  55% used [0x38a80000, 0x3911c208, 0x3911c400, 0x39680000)
+
+Code Cache  [0x02280000, 0x022c0000, 0x04280000)
+ total_blobs=48 nmethods=0 adapters=27 free_code_cache=33310400 largest_free_block=448
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Windows\system32\java.exe
+0x77580000 - 0x776a8000 	C:\Windows\system32\ntdll.dll
+0x76060000 - 0x7613c000 	C:\Windows\system32\kernel32.dll
+0x75f50000 - 0x76016000 	C:\Windows\system32\ADVAPI32.dll
+0x76360000 - 0x76423000 	C:\Windows\system32\RPCRT4.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76430000 - 0x764cd000 	C:\Windows\system32\USER32.dll
+0x75e10000 - 0x75e5b000 	C:\Windows\system32\GDI32.dll
+0x72af0000 - 0x72b22000 	C:\Windows\system32\WINMM.dll
+0x764d0000 - 0x7657a000 	C:\Windows\system32\msvcrt.dll
+0x76140000 - 0x76285000 	C:\Windows\system32\ole32.dll
+0x770f0000 - 0x7717d000 	C:\Windows\system32\OLEAUT32.dll
+0x73f90000 - 0x73fcd000 	C:\Windows\system32\OLEACC.dll
+0x75df0000 - 0x75e0e000 	C:\Windows\system32\IMM32.DLL
+0x76290000 - 0x76358000 	C:\Windows\system32\MSCTF.dll
+0x75a50000 - 0x75a7c000 	C:\Windows\system32\apphelp.dll
+0x75ca0000 - 0x75ca9000 	C:\Windows\system32\LPK.DLL
+0x77180000 - 0x771fd000 	C:\Windows\system32\USP10.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x75c10000 - 0x75c17000 	C:\Windows\system32\PSAPI.DLL
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+
+VM Arguments:
+java_command: Annealer.jar GTGCCCCACCGCTGCGCGGCGCAAGTCGTCGCCGG GTGCCCCACCGCTGCGCGGCGCAAGTCGTCGCCGG
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files\TortoiseSVN\bin;C:\Program Files\SlikSvn\bin\;C:\Windows\System32\WindowsPowerShell\v1.0\
+USERNAME=public Surface
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Vista Build 6002 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2095568k(406016k free), swap 5172948k(753432k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.1-b02) for windows-x86 JRE (1.6.0_26-b03), built on May  4 2011 00:50:59 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Mon Aug 01 07:44:44 2011
+elapsed time: 3 seconds
+

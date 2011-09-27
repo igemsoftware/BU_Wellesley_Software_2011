@@ -1,0 +1,5 @@
+LENGTH=4686137 bp
+ACCESSION=NC_010473
+VERSION=GI:170079663
+ORGANISM=Escherichia coli str. K-12 substr. DH10B
+LINEAGE=Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacteriales; Enterobacteriaceae; Escherichia.

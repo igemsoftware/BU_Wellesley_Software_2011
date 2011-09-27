@@ -1,0 +1,174 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using System.Windows.Threading;
+using Microsoft.Surface;
+using Microsoft.Surface.Presentation;
+using Microsoft.Surface.Presentation.Controls;
+using GnomeSurferPro.ViewModels;
+
+namespace GnomeSurferPro.Views
+{
+    /// <summary>
+    /// Interaction logic for SurfaceWindow1.xaml
+    /// </summary>
+    public partial class SurfaceWindow1 : SurfaceWindow
+    {
+        private const int _eraseMargin = 50;
+
+        private SurfaceWindow1ViewModel _myViewModel;
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public SurfaceWindow1()
+        {
+            InitializeComponent();
+
+            // Add handlers for Application activation events
+            AddActivationHandlers();
+
+            //Define DataContext
+            _myViewModel = new SurfaceWindow1ViewModel();
+            this.DataContext = _myViewModel;
+        }
+
+
+        #region Default Methods
+        /// <summary>
+        /// Occurs when the window is about to close. 
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            // Remove handlers for Application activation events
+            RemoveActivationHandlers();
+        }
+
+        /// <summary>
+        /// Adds handlers for Application activation events.
+        /// </summary>
+        private void AddActivationHandlers()
+        {
+            // Subscribe to surface application activation events
+            ApplicationLauncher.ApplicationActivated += OnApplicationActivated;
+            ApplicationLauncher.ApplicationPreviewed += OnApplicationPreviewed;
+            ApplicationLauncher.ApplicationDeactivated += OnApplicationDeactivated;
+        }
+
+        /// <summary>
+        /// Removes handlers for Application activation events.
+        /// </summary>
+        private void RemoveActivationHandlers()
+        {
+            // Unsubscribe from surface application activation events
+            ApplicationLauncher.ApplicationActivated -= OnApplicationActivated;
+            ApplicationLauncher.ApplicationPreviewed -= OnApplicationPreviewed;
+            ApplicationLauncher.ApplicationDeactivated -= OnApplicationDeactivated;
+        }
+
+        /// <summary>
+        /// This is called when application has been activated.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnApplicationActivated(object sender, EventArgs e)
+        {
+            //TODO: enable audio, animations here
+        }
+
+        /// <summary>
+        /// This is called when application is in preview mode.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnApplicationPreviewed(object sender, EventArgs e)
+        {
+            //TODO: Disable audio here if it is enabled
+
+            //TODO: optionally enable animations here
+        }
+
+        /// <summary>
+        ///  This is called when application has been deactivated.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnApplicationDeactivated(object sender, EventArgs e)
+        {
+            //TODO: disable audio, animations here
+        }
+        #endregion
+
+        #region Routed Events for Workspace
+
+        private void workspaceContainerSVI_ScatterManipulationDelta(object sender, ScatterManipulationDeltaEventArgs e)
+        {
+            _myViewModel.ExtendedDesktopViewModel.Routed_workspaceContainerSVI_ScatterManipulationDelta(sender, e);
+        }
+
+        private void workspaceContainerSVI_ScatterManipulationCompleted(object sender, ScatterManipulationCompletedEventArgs e)
+        {
+            _myViewModel.ExtendedDesktopViewModel.Routed_workspaceContainerSVI_ScatterManipulationCompleted(sender, e);
+        }
+
+<<<<<<< .mine
+        private void SendToWorkspace_ScatterManipulationCompleted(object sender, ScatterManipulationCompletedEventArgs e)
+        {
+            _myViewModel.ExtendedDesktopViewModel.Routed_SendToWorkspace_ScatterManipulationCompleted(sender, e);
+        }
+        #endregion
+
+        #region Routed Events for Publications
+=======
+        private void searchShelfContainerSVI_ScatterManipulationDelta(object sender, ScatterManipulationDeltaEventArgs e)
+        {
+            const double minY = -320;
+            const double maxY = 300;
+            const double x = 512;
+            ScatterViewItem item = (ScatterViewItem)sender;
+            double y = item.Center.Y;
+            y = Math.Max(y, minY);
+            y = Math.Min(y, maxY);
+            item.Center = new Point(x, y);
+        }
+     
+>>>>>>> .r27
+        private void PublicationsArticle_PreviewContactDown(object sender, ContactEventArgs e)
+        {
+            _myViewModel.Routed_PublicationsArticle_PreviewContactDown(sender, e);
+        }
+
+        private void PublicationsArticle_DragCanceled(object sender, SurfaceDragDropEventArgs e)
+        {
+            _myViewModel.Routed_PublicationsArticle_DragCanceled(sender, e);
+        }
+
+        private void PublicationsArticle_SVIInitialized(object sender, EventArgs e)
+        {
+            _myViewModel.Routed_PublicationsArticle_SVIInitialized(sender, e);
+        }
+        #endregion
+
+        private void Erase_ScatterManipulationCompleted(object sender, ScatterManipulationCompletedEventArgs e)
+        {
+            double xPosition = e.ManipulationOrigin.X;
+            if (xPosition < _eraseMargin || xPosition > (Width - _eraseMargin)) // check if svi is outside erase margin
+            {
+                FrameworkElement element = (FrameworkElement) sender;
+                _myViewModel.EraseItem(element.DataContext);
+            }
+        }
+    }
+}

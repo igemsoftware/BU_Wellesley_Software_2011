@@ -1,0 +1,207 @@
+﻿<s:SurfaceUserControl x:Class="PrimerDesigner.PrimerDesignerUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+    
+
+    <Grid Background="Black">
+        <Polygon x:Name="genePolygon" Points="200,400 300,300 824,300 825,500 300,500 200,400" Stroke="White" StrokeThickness="5"/>
+        <Label x:Name="geneNameLabel" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">TP53</Label>
+        <Label x:Name="geneBPLabel" Foreground="White" HorizontalAlignment="Center" Padding="0,410,0,0"  FontSize="20">1234 bp</Label>
+        <Polygon x:Name="leftPrimerPolygon" Points="25,350 50,325 450,325 450,375 50,375 25,350" Fill="DodgerBlue"></Polygon>
+        <Polygon x:Name="rightPrimerPolygon" Points="999,625 974,600 624,600 624,650 974,650 999,625" Fill="YellowGreen"></Polygon>
+
+            <s:ScatterView>
+            <!--<s:TagVisualizer Name="tagVis" Width="1024" Height="800" 
+                         VisualizationAdded="VisualizationAdded"
+                         PreviewVisualizationRemoved="PreviewVisualizationRemoved"
+                         PreviewVisualizationMoved="PreviewVisualizationMoved">
+                <s:TagVisualizer.Definitions>
+                    <s:ByteTagVisualizationDefinition x:Name="BlastTag" Value="0x02" TagRemovedBehavior="Fade" LostTagTimeout="5500"  Source="BlastTag.xaml"/>
+                </s:TagVisualizer.Definitions>
+            </s:TagVisualizer>-->
+
+                
+                
+            <s:ScatterViewItem x:Name="runningLeftBlastLabel" Center="100,400" Width="100" Height="50" Background="Transparent" 
+                               CanMove="False" CanRotate="False" CanScale="False" IsTopmostOnActivation="False"
+                                   ShowsActivationEffects="False" Visibility="Hidden">
+                <Label Foreground="White">Running BLAST</Label>
+            </s:ScatterViewItem>
+
+            <s:ScatterViewItem x:Name="runningRightBlastLabel" Center="924,675" Width="100" Height="50" Background="Transparent" 
+                               CanMove="False" CanRotate="False" CanScale="False" IsTopmostOnActivation="False"
+                                   ShowsActivationEffects="False" Visibility="Hidden">
+                <Label Foreground="White">Running BLAST</Label>
+            </s:ScatterViewItem>
+                
+                
+                
+
+            <s:ScatterViewItem x:Name="leftPrimer" Center="250,350" Width="400" Height="50" Background="DodgerBlue" 
+                               CanMove="False" CanRotate="False" CanScale="False" IsTopmostOnActivation="False"
+                                   ShowsActivationEffects="False">
+                <Canvas>
+                    <Grid x:Name="leftSequenceRestrictionLayer" Width="400" Height="50" Background="Transparent"/>
+                
+                <TextBlock x:Name="leftSequence" FontFamily="Courier New, Verdana"  VerticalAlignment="Center" FontSize="12.4pt"
+                           Text="ATGGACGCGGCTACGACAAGAGTTGGCCTCACCGACTTGA" Foreground="White"></TextBlock>
+                        </Canvas>
+            </s:ScatterViewItem>
+                
+                
+           
+
+            <s:ScatterViewItem x:Name="rightPrimer" Center="774, 625" Width="400" Height="50" Background="YellowGreen"
+                               CanMove="False" CanRotate="False" CanScale="False" IsTopmostOnActivation="False"
+                               ShowsActivationEffects="False">
+                <Canvas>
+                    <Grid x:Name="rightSequenceRestrictionLayer" Width="400" Height="50" Background="Transparent"/>
+                <TextBlock x:Name="rightSequence" FontFamily="Courier New, Verdana"  VerticalAlignment="Center" FontSize="12.4pt"
+                           Text="ATGGACGCGGCTACGACAAGAGTTGGCCTCACCGACTTGA" Foreground="White"></TextBlock>
+                    </Canvas>
+            </s:ScatterViewItem>
+
+
+
+
+
+            <s:ScatterViewItem x:Name="leftHighlight" Center="100,350" Width="100" Height="50"
+                               CanRotate="False" CanScale="False"  CanMove="True" Opacity=".5" Background="White"
+                               ShowsActivationEffects="False"
+                               ScatterManipulationDelta="leftHighlight_ScatterManipulationDelta" 
+                               ScatterManipulationCompleted="leftHighlight_ScatterManipulationCompleted"/>
+
+            <s:ScatterViewItem x:Name="rightHighlight" Center="949,625" Width="50" Height="50"
+                               CanRotate="False" CanScale="False"  CanMove="True" Opacity=".5" Background="White"
+                                   ShowsActivationEffects="False"
+                               ScatterManipulationDelta="rightHighlight_ScatterManipulationDelta"
+                               ScatterManipulationCompleted="rightHighlight_ScatterManipulationCompleted"/>
+
+
+            <!--lefthand sliders and checks-->
+            <s:ScatterViewItem Center="100,260" Height="100" Width="100" Background="DodgerBlue"
+                               CanMove="False" CanRotate="False" CanScale="False" ShowsActivationEffects="False">
+                <Canvas>
+                    <Label Content="Length" Foreground="White" Padding="5,5,0,0"></Label>
+                    <Label x:Name="leftLength" Content="5" Padding="50,5,0,0" Foreground="White"></Label>
+                    <Label Content="TM" Padding="5,20,0,0" Foreground="White" ></Label>
+                    <Label x:Name="leftTemp" Content="25" Padding="50,20,0,0" Foreground="White"></Label>
+                    <Label Content="deltaG" Padding="5,35,0,0" Foreground="White"></Label>
+                    <Label x:Name="leftGibbsFree" Content="0" Padding="50,35,0,0" Foreground="White"></Label>
+
+                </Canvas>
+            </s:ScatterViewItem>
+
+            <s:ScatterViewItem Center="305,260" Height="100" Width="290" Background="DodgerBlue"
+                               CanMove="False" CanRotate="False" CanScale="False" ShowsActivationEffects="False">
+                <Canvas>
+                    <Label Foreground="White" Padding="5,5,0,0" >BLAST</Label>
+                    <Label Foreground="White" Padding="5,20,0,0">Temperature</Label>
+                    <Label Foreground="White" Padding="5,35,0,0">Hairpin</Label>
+                    <Label Foreground="White" Padding="5,50,0,0">Self-dimer</Label>
+                    <Label Foreground="White" Padding="5,65, 0,0">Heterodimer</Label>
+
+                    <Label x:Name="leftBlastResult" Foreground="White" HorizontalAlignment="Right" Padding="200,5,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="leftTempResult" Foreground="White" HorizontalAlignment="Right" Padding="200,20,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="leftHairpinResult" Foreground="White" HorizontalAlignment="Right" Padding="200,35,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="leftSelfDimerResult" Foreground="White" HorizontalAlignment="Right" Padding="200,50,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="leftHeteroDimerResult" Foreground="White" HorizontalAlignment="Right" Padding="200,65,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                
+                   
+               
+                </Canvas>
+
+            </s:ScatterViewItem>
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" Center="100,175" Background="DodgerBlue">
+                <s:SurfaceButton Click="LeftSurfaceButton_Click" Width="100" Background="DodgerBlue" Foreground="White">BLAST results</s:SurfaceButton>
+            </s:ScatterViewItem>
+
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" Center="205,175" Background="DodgerBlue">
+                <s:SurfaceButton Click="HairpinLeftButton_Click" Width="90" Background="DodgerBlue" Foreground="White">Hairpin</s:SurfaceButton>
+            </s:ScatterViewItem>
+
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" Center="305,175" Background="DodgerBlue">
+                <s:SurfaceButton Click="SelfDimerLeftButton_Click" Width="90" Background="DodgerBlue" Foreground="White">Self-dimer</s:SurfaceButton>
+            </s:ScatterViewItem>
+
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" Center="405,175" Background="DodgerBlue">
+                <s:SurfaceButton Click="HeteroDimerLeftButton_Click" Width="90" Background="DodgerBlue" Foreground="White">Heterodimer</s:SurfaceButton>
+            </s:ScatterViewItem>
+
+            <!--Righthand sliders and checks-->
+            <s:ScatterViewItem Center="924,540" Height="100" Width="100" Background="YellowGreen"
+                               CanMove="False" CanRotate="False" CanScale="False" ShowsActivationEffects="False">
+                <Canvas>
+                    <Label Content="Length" Foreground="White"></Label>
+                    <Label x:Name="rightLength" Content="5" Padding="50,5,0,0" Foreground="White"></Label>
+
+                    <Label Content="TM" Padding="5,20,0,0" Foreground="White"></Label>
+                    <Label x:Name="temp" Content="25" Padding="50,20,0,0" Foreground="White"></Label>
+                    <Label Content="deltaG" Padding="5,35,0,0" Foreground="White"></Label>
+                    <Label x:Name="rightGibbsFree" Content="0" Padding="50,35,0,0" Foreground="White"></Label>
+                </Canvas>
+            </s:ScatterViewItem>
+
+            <s:ScatterViewItem Center="720,540" Height="100" Width="290" Background="YellowGreen"
+                               CanMove="False" CanRotate="False" CanScale="False" ShowsActivationEffects="False">
+                <Canvas>
+                    <Label Foreground="White" Padding="5,5,0,0" >BLAST</Label>
+                    <Label Foreground="White" Padding="5,20,0,0">Temperature</Label>
+                    <Label Foreground="White" Padding="5,35,0,0">Hairpin</Label>
+                    <Label Foreground="White" Padding="5,50,0,0">Self-dimer</Label>
+                    <Label Foreground="White" Padding="5,65, 0,0">Heterodimer</Label>
+
+                    <Label x:Name="rightBlastResult" Foreground="White" HorizontalAlignment="Right" Padding="200,5,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="rightTempResult" Foreground="White" HorizontalAlignment="Right" Padding="200,20,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="rightHairpinResult" Foreground="White" HorizontalAlignment="Right" Padding="200,35,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="rightSelfDimerResult" Foreground="White" HorizontalAlignment="Right" Padding="200,50,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+                    <Label x:Name="rightHeteroDimerResult" Foreground="White" HorizontalAlignment="Right" Padding="200,65,0,0" FontFamily="Webdings" FontSize="13">x</Label>
+
+                </Canvas>
+
+            </s:ScatterViewItem>
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" CanRotate="False" Center="924,450" Background="YellowGreen">
+                <s:SurfaceButton Click="RightSurfaceButton_Click" Width="100" Background="YellowGreen" Foreground="White">BLAST results</s:SurfaceButton>
+            </s:ScatterViewItem>
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" CanRotate="False" Center="819,450" Background="YellowGreen">
+                <s:SurfaceButton Click="HairpinRightButton_Click" Width="90" Background="YellowGreen" Foreground="White">Hairpin</s:SurfaceButton>
+            </s:ScatterViewItem>
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" CanRotate="False" Center="719,450" Background="YellowGreen">
+                <s:SurfaceButton Click="SelfDimerRightButton_Click" Width="90" Background="YellowGreen" Foreground="White">Self-dimer</s:SurfaceButton>
+            </s:ScatterViewItem>
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" CanRotate="False" Center="619,450" Background="YellowGreen">
+                <s:SurfaceButton Click="HeteroDimerRightButton_Click" Width="90" Background="YellowGreen" Foreground="White" >Heterodimer</s:SurfaceButton>
+            </s:ScatterViewItem>
+            
+            
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" CanRotate="False" Center="964,45" Background="Transparent" >
+                <s:SurfaceButton Width="100" Foreground="White" Command="{Binding BackCommand}">BACK</s:SurfaceButton>
+            </s:ScatterViewItem>
+
+            <s:ScatterViewItem Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" CanRotate="False" Center="854,45" Background="Transparent" >
+                <s:SurfaceButton Width="100" Click="SaveButton_Click" Foreground="White">SAVE</s:SurfaceButton>
+            </s:ScatterViewItem>
+            
+            <s:ScatterViewItem x:Name="saveLabelSVI" Orientation="0" CanMove="False" ShowsActivationEffects="False" CanScale="False" CanRotate="False" Center="512,100" Background="Transparent"
+                               Opacity="0" >
+                <Label Foreground="White" FontSize="24">Your Primer has been bio-bricked.</Label>
+            </s:ScatterViewItem>
+
+
+
+        </s:ScatterView>
+
+
+        <Grid x:Name="blastGrid" Visibility="Hidden" Background="Black" Opacity=".95"/>
+        <s:ScatterView x:Name="blastScatterView" Visibility="Hidden" >
+            <s:ScatterViewItem Center="964,45" Background="Transparent" CanMove="False" CanScale="False" CanRotate="False" Orientation="0">
+                <s:SurfaceButton Click="HideSurfaceButton_Click" Width="100" Foreground="White">BACK</s:SurfaceButton>
+            </s:ScatterViewItem>
+
+        </s:ScatterView>
+    </Grid>
+    
+    
+    
+</s:SurfaceUserControl>

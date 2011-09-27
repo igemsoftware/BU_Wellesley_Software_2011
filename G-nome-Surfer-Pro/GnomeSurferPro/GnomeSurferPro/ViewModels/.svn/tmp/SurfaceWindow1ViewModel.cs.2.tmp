@@ -1,0 +1,276 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using GnomeSurferPro.ViewModels;
+using GenBank;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
+using System.Windows.Data;
+using Microsoft.Surface.Presentation;
+using Microsoft.Surface.Presentation.Controls;
+using System.Windows;
+
+namespace GnomeSurferPro.ViewModels
+{
+    public class SurfaceWindow1ViewModel:ViewModelBase
+    {
+        private ChromosomeBarViewModel _chromosomeBarViewModel;
+        private PublicationsViewModel _publicationsViewModel;
+        private ExtendedDesktopViewModel _extendedDesktopViewModel;
+        private ObservableCollection<IPublication> _SVIpublicationCollection;
+        private TestSVIViewModel _testSVIViewModel;
+        private bool pubBoxAlreadyCreated = false;
+        private SearchMenuViewModel _initialSearchMenu;
+
+        private CompositeCollection _allObjectsCollection;
+        private bool _initialSearchMenuVisible = true;
+        
+
+        public SurfaceWindow1ViewModel()
+        {
+            IList<IGene> genes = new List<IGene>();
+            int geneLength = 800;
+            int geneMargin = 200;
+            string sequence = "gattacagattacagattacagattacagattacagattacagattacagattacagattacagattacagattacagattacagattacagattacagattacagattaca";
+            string translation = "LSASTDUGQWEJHRHWGESBDFKJGHSUIDTDHFGJWHEGRTWEHJDGVFJHSDGBFNMWEBRIYTQTWUWERUOUSDPFSYOZSDJKFHOIUER";
+            for (int i = 0; i < 100; i++)
+            {
+                IGene gene = new GeneImplementation();
+                gene.LocusTag = i.ToString();
+                gene.LeftBasePair = (geneLength + geneMargin) * i + geneMargin;
+                gene.RightBasePair = gene.LeftBasePair + geneLength;
+                gene.Sequence = sequence;
+                gene.Translation = translation;
+                genes.Add(gene);
+
+                IGene reverseGene = new GeneImplementation();
+                reverseGene.LocusTag = i.ToString();
+                reverseGene.LeftBasePair = (geneLength + geneMargin) * i + geneMargin;
+                reverseGene.RightBasePair = gene.LeftBasePair + geneLength;
+                reverseGene.IsForward = false;
+                reverseGene.Sequence = sequence;
+                reverseGene.Translation = translation;
+                genes.Add(reverseGene);
+            }
+
+            _allObjectsCollection = new CompositeCollection();
+
+            _chromosomeBarViewModel = new ChromosomeBarViewModel(genes, genes.Last().RightBasePair, this);
+
+            if (pubBoxAlreadyCreated == false)
+            {
+                _publicationsViewModel = new PublicationsViewModel(this);
+                pubBoxAlreadyCreated = true;
+            }
+            _SVIpublicationCollection = new ObservableCollection<IPublication>();
+            _testSVIViewModel = new TestSVIViewModel();
+
+            CollectionContainer cc1 = new CollectionContainer();
+            cc1.Collection = _SVIpublicationCollection;
+
+            _extendedDesktopViewModel = new ExtendedDesktopViewModel(this);
+
+            _allObjectsCollection.Add(_chromosomeBarViewModel);
+            _allObjectsCollection.Add(_publicationsViewModel);
+            _allObjectsCollection.Add(cc1);
+            _allObjectsCollection.Add(_testSVIViewModel);
+            _allObjectsCollection.Add(_extendedDesktopViewModel);
+
+
+
+
+            //ExtendedDesktopViewModel must be instantiated in SurfaceWindow1.xaml.cs instead of here
+            //because of the event handlers
+
+
+        }
+
+        public bool InitialSearchMenuVisible
+        {
+            get { return _initialSearchMenuVisible; }
+            set
+            {
+                if (_initialSearchMenuVisible != value)
+                {
+                    _initialSearchMenuVisible = value;
+                    OnPropertyChanged("InitialSearchMenuVisible");
+                }
+            }
+        }
+
+        public CompositeCollection AllObjectsCollection
+        {
+            get
+            {
+                return _allObjectsCollection;
+            }
+        }
+
+        public ChromosomeBarViewModel ChromosomeBarViewModel
+        {
+            get
+            {
+                return _chromosomeBarViewModel;
+            }
+            set
+            {
+                if (value != _chromosomeBarViewModel)
+                {
+                    _chromosomeBarViewModel = value;
+                    OnPropertyChanged("ChromosomeBarViewModel");
+                }
+            }
+        }
+
+        public PublicationsViewModel PublicationsViewModel
+        {
+            get
+            {
+                return _publicationsViewModel;
+            }
+            set
+            {
+                if (value != _publicationsViewModel)
+                {
+                    _publicationsViewModel = value;
+                    OnPropertyChanged("PublicationsViewModel");
+                }
+            }
+        }
+
+        public ExtendedDesktopViewModel ExtendedDesktopViewModel
+        {
+            get
+            {
+                return _extendedDesktopViewModel;
+            }
+            set
+            {
+                if (value != _extendedDesktopViewModel)
+                {
+                    _extendedDesktopViewModel = value;
+                    OnPropertyChanged("ExtendedDesktopViewModel");
+                }
+            }
+        }
+
+        public ObservableCollection<IPublication> SVIPublicationCollection
+        {
+            get
+            {
+                return _SVIpublicationCollection;
+            }
+            set
+            {
+                _SVIpublicationCollection = value;
+            }
+        }
+
+        public ObservableCollection<IPublication> TesterSVIPublicationCollection
+        {
+            get
+            {
+                return new ObservableCollection<IPublication>();
+            }
+        }
+
+        public TestSVIViewModel TestSVIViewModel
+        {
+            get
+            {
+                return _testSVIViewModel;
+            }
+            set
+            {
+                if (value != _testSVIViewModel)
+                {
+                    _testSVIViewModel = value;
+                    OnPropertyChanged("TestSVIViewModel");
+                }
+            }
+        }
+
+        public SearchMenuViewModel InitialSearchMenu
+        {
+            get
+            {
+                if (_initialSearchMenu == null)
+                    _initialSearchMenu = new SearchMenuViewModel(this);
+
+                return _initialSearchMenu;
+            }
+        }
+
+        public void RenderSequenceView(IGene gene)
+        {
+            SequenceViewModel sequenceViewModel = new SequenceViewModel(this, gene);
+            int size = _allObjectsCollection.Add(sequenceViewModel);
+        }
+
+        public void RenderTranslationView(IGene gene)
+        {
+            TranslationViewModel translationViewModel = new TranslationViewModel(this, gene);
+            _allObjectsCollection.Add(translationViewModel);
+        }
+
+        public void EraseItem(object viewModel)
+        {
+            if (_allObjectsCollection.Contains(viewModel))
+            {
+                _allObjectsCollection.Remove(viewModel);
+            }
+        }
+
+        #region codes for rerouting publication article manipulations for drag drop events
+
+        public void Routed_PublicationsArticle_PreviewContactDown(object sender, ContactEventArgs e)
+        {
+           // _publicationsViewModel.Routed_ScatterView_PreviewContactDown(sender, e);
+        }
+
+        public void Routed_PublicationsArticle_DragCanceled(object sender, SurfaceDragDropEventArgs e)
+        {
+            if (!(e.Cursor.Data is PublicationsViewModel))
+            {                
+                Publication publication = e.Cursor.Data as Publication;
+
+                if (SVIPublicationCollection.Contains(publication))//filter this method to only apply to pubArticles currently in mainSV
+                {
+                    ScatterViewItem item = publication.DraggedElement as ScatterViewItem;
+                    if (item != null)
+                    {
+                        
+                        item.Orientation = e.Cursor.GetOrientation((ScatterView)sender);
+                        item.Center = e.Cursor.GetPosition((ScatterView)sender);
+                        item.Visibility = Visibility.Visible;
+                    }
+                }
+
+                //Copied from ScatterManipulationCompleted of moveable items
+                //Can't route to that original event because cursor is the one moving, not the actual publication SVI
+                //if ((item.Center.Y > 650) && !(ExtendedDesktopViewModel.WorkspaceCollection.Contains(item)))
+                //{
+                //    Console.WriteLine("SEND ME TO THE EXTENDED DESKTOP!!!");
+                //    ExtendedDesktopViewModel.WorkspaceCollection.Add(item);
+                //    //set center of object
+                //}
+            }
+        }
+
+
+        #endregion
+
+
+        public void Routed_PublicationsArticle_SVIInitialized(object sender, EventArgs e)
+        {
+            if (sender is ScatterViewItem && (sender as ScatterViewItem).DataContext != null)
+            {
+                //set the center of it by referencing the _currentArticleCenter and _currentArticleOrientation
+                //variables in PublicationsViewModel
+                ((ScatterViewItem)sender).Center = _publicationsViewModel._currentArticleCenter;
+                ((ScatterViewItem)sender).Orientation = _publicationsViewModel._currentArticleOrientation;
+            }
+        }
+    }
+}

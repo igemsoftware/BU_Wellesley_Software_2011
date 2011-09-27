@@ -1,0 +1,48 @@
+﻿<s:SurfaceUserControl x:Class="GnomeSurferPro.Views.SearchMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+    <s:ElementMenu ActivationMode="AlwaysActive" Grid.Row="1">
+        <s:ElementMenu.Resources>
+            <Style TargetType="{x:Type s:ElementMenuItem}" x:Key="Leaf">
+                <Setter Property="Background" Value="Yellow" />
+                <Setter Property="Command" Value="{Binding SelectChromosomeCommand}" />
+                <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource Self}, Path=Uid}" />
+            </Style>
+        </s:ElementMenu.Resources>
+
+        <s:ElementMenuItem Header="Eukaryota" Uid="0">
+            <s:ElementMenuItem Header="Homo sapien" Style="{StaticResource Leaf}"/>
+            <s:ElementMenuItem Header="Mus musculus" Style="{StaticResource Leaf}"/>
+        </s:ElementMenuItem>
+
+        <s:ElementMenuItem Header="Prokaryota" Uid="1">
+            <!--s:ElementMenuItem Header="Parts" Background="Yellow"/ -->
+
+            <s:ElementMenuItem Header="Mycobacterium">
+                <s:ElementMenuItem Header="tuberculosis">
+                    <s:ElementMenuItem Header="H37Ra" Uid="NC_009525" Style="{StaticResource Leaf}"/>
+                    <s:ElementMenuItem Header="CDC1551" Uid="NC_002755" Style="{StaticResource Leaf}"/>
+                    <s:ElementMenuItem Header="F11" Uid="NC_009565" Style="{StaticResource Leaf}"/>
+                    <s:ElementMenuItem Header="H37Rv" Uid="NC_000962" Style="{StaticResource Leaf}"/>
+                    <s:ElementMenuItem Header="KZN 1435" Uid="NC_012943" Style="{StaticResource Leaf}"/>
+                </s:ElementMenuItem>
+
+                <s:ElementMenuItem Header="smegmatis">
+                    <s:ElementMenuItem Header="MC2 155" Uid="NC_008596" Style="{StaticResource Leaf}"/>
+                </s:ElementMenuItem>
+            </s:ElementMenuItem>
+
+            <s:ElementMenuItem Header="Escherichia" Uid="escherichia">
+                <s:ElementMenuItem Header="coli">
+                    <s:ElementMenuItem Header="DH10B" Uid="NC_010473" Style="{StaticResource Leaf}"/>
+                    <s:ElementMenuItem Header="MG1655" Uid="NC_000913" Style="{StaticResource Leaf}"/>
+                    <s:ElementMenuItem Header="O157:H7">
+                        <s:ElementMenuItem Header="EDL933" Uid="NC_002655" Style="{StaticResource Leaf}"/>
+                        <s:ElementMenuItem Header="O157" Uid="NC_007414" Style="{StaticResource Leaf}"/>
+                    </s:ElementMenuItem>
+                </s:ElementMenuItem>
+            </s:ElementMenuItem>
+        </s:ElementMenuItem>
+    </s:ElementMenu>
+</s:SurfaceUserControl>

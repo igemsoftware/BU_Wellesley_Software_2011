@@ -1,0 +1,17 @@
+Thank you for downloading G-nome Surfer Pro!
+
+In order to run and install G-nome Surfer Pro, you need to be able to run the Surface Simulator and run the GnomeSurferPro Visual Studio Project Solution.
+
+To start, you must have a computer running Vista or higher. The computer must be 32-bit. If it is not, it unfortunately wil not run. YOu can try searching for getting around this for and MS Surface SDK install on a 64-bit machine, but we've had no success with these work arounds. Another route, is to install the machine along with the MS Surface SDK 2.0 and convert the project to be workable in 2.0. Another thing we have not had success at yet.
+
+If you have a machine that meets the requirements, you can go to the Microsoft download page and install the Surface SDK: http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=15532. Once you install and run, you should have the Surface Simulator. 
+
+Now you need Visual Studio. You only need the express edition, but you need 2008, not the later versions. Here is the link to install VS2008: http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=6506.
+
+Once that is set, you can run almost all the features of G-nome Surfer Pro. you will be able to search for genes, navigate PubMed, Retrieve information from GenBank (notes), and get transcriptions. You will not be able to run BLAST yet.
+
+In order to run BLAST, you need to download the NCBI BLAST executable. Once you install it, move the executable file to the PrimerBlast directory in the project. Then, navigate to the file in Windows Explorer and copy the directory address in to the RealPrimerBlast file under. The variable name is data_dir. 
+
+Now you should be all set!
+
+Happy surfing ;)
