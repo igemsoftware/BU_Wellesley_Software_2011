@@ -1,1 +1,12 @@
-For basic description of Trumpet, please visit this url: http://2011.igem.org/Team:BU_Wellesley_Software/Trumpet.
+For a basic description of Trumpet, please visit this url: http://2011.igem.org/Team:BU_Wellesley_Software/Trumpet.
+
+To use Trumpet:
+
+1) Unzip and untar the Trumpet.tar.gz file in this directory. This will create a folder called
+Trumpet in the current directory.
+
+2) Obtain the latest source code of Clotho and build it using Netbeans. For instructions, please
+visit http://www.clothohelp.org.
+
+3) Add Trumpet as a Netbeans module to the Clotho Netbeans module. Compile and build it using
+Netbeans.
