@@ -8,8 +8,11 @@ module. To compile and build these applications, you will need to install Java a
 version of Netbeans, and obtain a copy of the Clotho Core. For instructions on how to do this,
 please visit our help page located at http://wiki.bu.edu/ece-clotho/index.php/DeveloperSetupNew.
 Once you have built the Clotho Core successfully, unzip and untar the archives for our applications
-and them to the Netbeans Clotho module. Be sure to check and refresh their dependency on the Clotho
-Core, and then build them. Finally, use Netbeans' ``Package As'' feature to build an executable.
+and add them to the Netbeans Clotho module. Be sure to check and refresh their dependency on the
+Clotho Core, and then build them. Finally, use Netbeans' ``Package As'' feature to build an
+executable. The executable will appear in the ClothoProject/dist directory as a zipped file. To
+execute it, unzip the file and execute the script file ``clotho'' or ``clotho.exe'' depending on
+your operating system.
 
 The G-nome Surfer Pro directory contains the source code required to build our G-nome Surfer
 application for the Microsoft Surface. Please refer to the README file in that directory for
