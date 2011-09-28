@@ -1,6 +1,6 @@
 This is the github software repository of the BU_Wellesley_Software team for the 2011 iGEM
 competition. Our repository is divided into four directories housing three applications and one
-executable. 
+executable.
 
 The Trumpet and OptimusPrimer directories have a single zipped file archive containing the source
 code for these applications. The zipped archive contains source files in the form of a Netbeans
@@ -18,11 +18,12 @@ The G-nome Surfer Pro directory contains the source code required to build our G
 application for the Microsoft Surface. Please refer to the README file in that directory for
 instructions on how to build that application.
 
-Please visit our iGEM wiki located at http://2011.igem.org/Team:BU_Wellesley_Software
-to learn more about our projects. There, you will find video tutorials, descriptions, and other
-details on how our tools create and complement the synthetic biology workflow. If you have
-questions, please email us at bu-wellesley@googlegroups.com.
+Please visit our iGEM wiki located at http://2011.igem.org/Team:BU_Wellesley_Software to learn more
+about our projects. There, you will find video tutorials, descriptions, and other details on how our
+tools create and complement the synthetic biology workflow. If you have questions, please email us
+at bu-wellesley@googlegroups.com.
 
 We hope that you will try out our software tools.
 
-The BU-Wellesley iGEM 2011
+The BU-Wellesley iGEM Team
+September 28th, 2011
