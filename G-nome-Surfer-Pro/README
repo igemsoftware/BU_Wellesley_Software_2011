@@ -1,8 +1,10 @@
 Thank you for downloading G-nome Surfer Pro!
 
+A demo of G-nome Surfer Pro and the tabletop version of Optimus Primer can be found here: http://www.youtube.com/user/WellesleyHCILab#p/u/4/URUkqrdFV0k.
+
 In order to run and install G-nome Surfer Pro, you need to be able to run the Surface Simulator and run the GnomeSurferPro Visual Studio Project Solution.
 
-To start, you must have a computer running Vista or higher. The computer must be 32-bit. If it is not, it unfortunately wil not run. YOu can try searching for getting around this for and MS Surface SDK install on a 64-bit machine, but we've had no success with these work arounds. Another route, is to install the machine along with the MS Surface SDK 2.0 and convert the project to be workable in 2.0. Another thing we have not had success at yet.
+To start, you must have a computer running Vista or higher. The computer must be 32-bit. 
 
 If you have a machine that meets the requirements, you can go to the Microsoft download page and install the Surface SDK: http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=15532. Once you install and run, you should have the Surface Simulator. 
 
