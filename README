@@ -1,9 +1,25 @@
 This is the github software repository of the BU_Wellesley_Software team for the 2011 iGEM
-competition.  Please visit our iGEM wiki located at http://2011.igem.org/Team:BU_Wellesley_Software
+competition. Our repository is divided into four directories housing three applications and one
+executable. 
+
+The Trumpet and OptimusPrimer directories have a single zipped file archive containing the source
+code for these applications. The zipped archive contains source files in the form of a Netbeans
+module. To compile and build these applications, you will need to install Java and the latest
+version of Netbeans, and obtain a copy of the Clotho Core. For instructions on how to do this,
+please visit our help page located at http://wiki.bu.edu/ece-clotho/index.php/DeveloperSetupNew.
+Once you have built the Clotho Core successfully, unzip and untar the archives for our applications
+and them to the Netbeans Clotho module. Be sure to check and refresh their dependency on the Clotho
+Core, and then build them. Finally, use Netbeans' ``Package As'' feature to build an executable.
+
+The G-nome Surfer Pro directory contains the source code required to build our G-nome Surfer
+application for the Microsoft Surface. Please refer to the README file in that directory for
+instructions on how to build that application.
+
+Please visit our iGEM wiki located at http://2011.igem.org/Team:BU_Wellesley_Software
 to learn more about our projects. There, you will find video tutorials, descriptions, and other
 details on how our tools create and complement the synthetic biology workflow. If you have
 questions, please email us at bu-wellesley@googlegroups.com.
 
 We hope that you will try out our software tools.
 
-BU-Wellesley iGEM 2011
+The BU-Wellesley iGEM 2011
